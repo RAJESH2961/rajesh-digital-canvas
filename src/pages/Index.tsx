@@ -10,6 +10,7 @@ import ModernThreeBackground from "@/components/ModernThreeBackground";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/contexts/ThemeContext";
 
+
 const Index = () => {
   const { isDark } = useTheme();
   const [typedText, setTypedText] = useState('');
@@ -40,7 +41,7 @@ const Index = () => {
       position: "Web Developer",
       duration: "Dec 2023 - may2024",
       location: "Tirupathi,AP",
-      description: "Developed and maintained multiple client projects using modern web technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.",
+      description: "Developed and maintained multiple Landing pages using modern web technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.",
       technologies: ["HTML", "CSS", "JavaScript", "JQuery"]
     },
   ];
@@ -118,19 +119,19 @@ const Index = () => {
   const allProjects = [
     {
       id: 1,
-      title: "Stock Prediction Portal",
-      description: "Real-time chat application with AI assistant integration using OpenAI API and WebSocket connections for seamless communication.",
-      techStack: ["React", "Node.js", "OpenAI", "WebSocket", "MongoDB"],
-      githubUrl: "https://github.com/rajesh",
-      liveUrl: "https://demo.com",
+      title: "Stock Prediction Portal (Coming soon)",
+      description: "Real-time stock prediction based on stock name",
+      techStack: ["React", "Django","MachineLearning", "Postman", "SQL", "JWT Authentication", "Three.js"],
+      githubUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
+      liveUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
       featured: true
     },
     {
       id: 2,
       title: "Assignment Logo Paper Generator",
       description: "IoT-based home automation system with voice control and mobile app interface for complete home management.",
-      techStack: ["Python", "Arduino", "React Native", "Firebase"],
-      githubUrl: "https://github.com/rajesh",
+      techStack: ["Python","Flask"],
+      githubUrl: "https://github.com/RAJESH2961/assignment-logo.git",
       liveUrl: "https://demo.com",
       featured: true
     },
@@ -138,8 +139,8 @@ const Index = () => {
       id: 3,
       title: "E-Commerce Platform",
       description: "Full-featured e-commerce platform with payment integration, admin dashboard, and modern user experience.",
-      techStack: ["Next.js", "Stripe", "PostgreSQL", "Prisma"],
-      githubUrl: "https://github.com/rajesh",
+      techStack: ["Django", "HTML5", "Bootstrap", "CSS3", "Responsive web design", "Sql"],
+      githubUrl: "https://github.com/RAJESH2961/E-commerce.git",
       liveUrl: "https://demo.com",
       featured: true
     },
@@ -147,15 +148,15 @@ const Index = () => {
       id: 4,
       title: "Multi disease Prediction",
       description: "Production-ready machine learning model for image classification with REST API and Docker deployment.",
-      techStack: ["Python", "TensorFlow", "FastAPI", "Docker", "AWS"],
-      githubUrl: "https://github.com/rajesh",
+      techStack: ["Python", "Flask", "EDA", "MachineLearning"],
+      githubUrl: "https://github.com/RAJESH2961/multi_disease_pred.git",
       featured: true
     },
     {
       id: 5,
       title: "Diploma percentage calculator",
       description: "Interactive dashboard for real-time data visualization with advanced filtering and export capabilities.",
-      techStack: ["React", "D3.js", "Node.js", "Socket.io", "PostgreSQL"],
+      techStack: ["HTML5", "CSS3", "JavaScript"],
       githubUrl: "https://github.com/rajesh",
       liveUrl: "https://demo.com",
       featured: true
@@ -164,40 +165,40 @@ const Index = () => {
       id: 6,
       title: "QR-code Generator tool",
       description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
-      techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/rajesh",
+      techStack: ["React.js"],
+      githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/QrCode-Generator",
       featured: true
     },
     {
       id: 7,
-      title: "QR-code Generator tool",
+      title: "Advice generator",
       description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
       techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/rajesh",
+      githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/AdviceGenerator",
       featured: false
     },
     {
       id: 8,
-      title: "QR-code Generator tool",
+      title: "Git gather",
       description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
       techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/rajesh",
+      githubUrl: "https://github.com/RAJESH2961/GitGather.git",
       featured: false
     },
     {
       id: 9,
-      title: "QR-code Generator tool",
+      title: "Recipe Sharing",
       description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
       techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/rajesh",
+      githubUrl: "https://github.com/RAJESH2961/Recipe-sharing.git",
       featured: false
     },
     {
       id: 10,
-      title: "QR-code Generator tool",
+      title: "Burger Zesty Food-Ordering",
       description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
       techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/rajesh",
+      githubUrl: "https://github.com/RAJESH2961/Burgster-Zesty-Food-Ordering.git",
       featured: false
     },
   ];
@@ -443,14 +444,18 @@ const Index = () => {
             
             {/* Call to action buttons with improved mobile layout */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 animate-fadeInUp px-4" style={{animationDelay: '1s'}}>
-              <Button className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${
-                isDark
-                  ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-                  : 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-              }`}>
-                <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-                Download Resume
-              </Button>
+              <a
+  href="/rajesh_fullstack_developer.pdf"
+  download
+  className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${
+    isDark
+      ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
+      : 'bg-primary hover:bg-primary-600 text-white hover:text-white'
+  }`}
+>
+  <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
+  Download Resume
+</a>
               <Button 
                 variant="outline" 
                 className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:scale-105 transition-all duration-300 ${
@@ -500,14 +505,14 @@ const Index = () => {
                   ? 'bg-gradient-to-br from-primary/20 to-accent/20 border-white/10' 
                   : 'bg-gradient-to-br from-primary/10 to-accent/10 border-gray-300 shadow-xl'
               }`}>
-                <div className={`w-24 sm:w-32 h-24 sm:h-32 rounded-full flex items-center justify-center ${
+                <div className={`w-54 sm:w-21 h-54 sm:h-21 rounded-full flex items-center justify-center ${
                   isDark ? 'bg-gradient-to-br from-primary/30 to-purple-500/30' : 'bg-gradient-to-br from-primary/20 to-purple-500/20'
                 }`}>
-                  <span className={`text-2xl sm:text-4xl ${isDark ? 'text-white' : 'text-gray-800'}`}><img 
-        src="https://images.rawpixel.com/image_800/cHJpdmF0ZS9sci9pbWFnZXMvd2Vic2l0ZS8yMDIyLTA1L2stcGYtcG9tLTEyNDIuanBn.jpg" 
+                  <img 
+        src="/demo.png" 
         alt="Rajesh Image" 
-        className="w-full h-full object-cover rounded-full"
-      /></span>
+        className="w-full h-full object-cover rounded-full  ring-2 ring-purple-600"
+      />
                 </div>
               </div>
             </div>

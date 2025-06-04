@@ -116,92 +116,96 @@ const Index = () => {
     setMobileMenuOpen(false);
   };
 
-  const allProjects = [
-    {
-      id: 1,
-      title: "Stock Prediction Portal (Coming soon)",
-      description: "Real-time stock prediction based on stock name",
-      techStack: ["React", "Django","MachineLearning", "Postman", "SQL", "JWT Authentication", "Three.js"],
-      githubUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
-      liveUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
-      featured: true
-    },
-    {
-      id: 2,
-      title: "Assignment Logo Paper Generator",
-      description: "IoT-based home automation system with voice control and mobile app interface for complete home management.",
-      techStack: ["Python","Flask"],
-      githubUrl: "https://github.com/RAJESH2961/assignment-logo.git",
-      liveUrl: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 3,
-      title: "E-Commerce Platform",
-      description: "Full-featured e-commerce platform with payment integration, admin dashboard, and modern user experience.",
-      techStack: ["Django", "HTML5", "Bootstrap", "CSS3", "Responsive web design", "Sql"],
-      githubUrl: "https://github.com/RAJESH2961/E-commerce.git",
-      liveUrl: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 4,
-      title: "Multi disease Prediction",
-      description: "Production-ready machine learning model for image classification with REST API and Docker deployment.",
-      techStack: ["Python", "Flask", "EDA", "MachineLearning"],
-      githubUrl: "https://github.com/RAJESH2961/multi_disease_pred.git",
-      featured: true
-    },
-    {
-      id: 5,
-      title: "Diploma percentage calculator",
-      description: "Interactive dashboard for real-time data visualization with advanced filtering and export capabilities.",
-      techStack: ["HTML5", "CSS3", "JavaScript"],
-      githubUrl: "https://github.com/rajesh",
-      liveUrl: "https://demo.com",
-      featured: true
-    },
-    {
-      id: 6,
-      title: "QR-code Generator tool",
-      description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
-      techStack: ["React.js"],
-      githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/QrCode-Generator",
-      featured: true
-    },
-    {
-      id: 7,
-      title: "Advice generator",
-      description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
-      techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/AdviceGenerator",
-      featured: false
-    },
-    {
-      id: 8,
-      title: "Git gather",
-      description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
-      techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/RAJESH2961/GitGather.git",
-      featured: false
-    },
-    {
-      id: 9,
-      title: "Recipe Sharing",
-      description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
-      techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/RAJESH2961/Recipe-sharing.git",
-      featured: false
-    },
-    {
-      id: 10,
-      title: "Burger Zesty Food-Ordering",
-      description: "Comprehensive social media management platform with scheduling, analytics, and multi-account support.",
-      techStack: ["Vue.js", "Laravel", "MySQL", "Redis", "AWS"],
-      githubUrl: "https://github.com/RAJESH2961/Burgster-Zesty-Food-Ordering.git",
-      featured: false
-    },
-  ];
+ const allProjects = [
+  {
+    id: 1,
+    title: "Stock Prediction Portal (Coming soon)",
+    description: "Real-time stock prediction using machine learning with interactive frontend.",
+    techStack: ["React", "Django", "MachineLearning", "Postman", "SQL", "JWT Authentication", "Three.js"],
+    githubUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
+    liveUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
+    featured: true
+  },
+  {
+    id: 2,
+    title: "Assignment Logo Paper Generator",
+    description: "Generates assignment papers with custom logos using Flask backend.",
+    techStack: ["Python", "Flask"],
+    githubUrl: "https://github.com/RAJESH2961/assignment-logo.git",
+    liveUrl: "https://multi-disease-pred.onrender.com/",
+    featured: true
+  },
+  {
+    id: 3,
+    title: "E-Commerce Platform",
+    description: "Responsive online shopping platform with cart, admin login Sentimental Analysis for comment section",
+    techStack: ["Django","Sentimental Analysis","HTML5", "Bootstrap", "CSS3", "Responsive web design", "MySql"],
+    githubUrl: "https://github.com/RAJESH2961/E-commerce.git",
+    // liveUrl: "https://demo.com",
+    featured: true
+  },
+  {
+    id: 4,
+    title: "Multi disease Prediction",
+    description: "Predicts multiple diseases using ML and REST API with Docker setup.",
+    techStack: ["Python", "Flask", "EDA", "MachineLearning"],
+    githubUrl: "https://github.com/RAJESH2961/multi_disease_pred.git",
+    liveUrl: "https://multi-disease-pred.onrender.com/",
+    featured: true
+  },
+  {
+    id: 5,
+    title: "Diploma percentage calculator",
+    description: "A web application to calculate the final percentage for diploma students with intuitive input.",
+    techStack: ["HTML5", "CSS3", "JavaScript", "Bootstrap5"],
+    githubUrl: "https://github.com/RAJESH2961/Diploma_Percentage_calculator",
+    liveUrl: "https://apdiplomamarks.netlify.app/",
+    featured: true
+  },
+  {
+    id: 6,
+    title: "QR-code Generator tool",
+    description: "Generates QR codes instantly using a React-powered interface.",
+    techStack: ["React.js", "API"],
+    githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/QrCode-Generator",
+    liveUrl: "https://rad-bavarois-59a97a.netlify.app/",
+
+    featured: true
+  },
+  // {
+  //   id: 7,
+  //   title: "Advice generator",
+  //   description: "Displays random advice quotes using API calls and React UI.",
+  //   techStack: ["React.js", "Bootstrap5"],
+  //   githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/AdviceGenerator",
+  //   featured: false
+  // },
+  {
+    id: 8,
+    title: "Git gather",
+    description: "Fetches and displays GitHub profiles and repositories.",
+    techStack: ["Raeact.js","Tailwind CSS"],
+    githubUrl: "https://github.com/RAJESH2961/GitGather.git",
+    featured: false
+  },
+  {
+    id: 9,
+    title: "Recipe Sharing",
+    description: "A platform for users to share, like, and discover recipes.",
+    techStack: ["react.js", "Redux API"],
+    githubUrl: "https://github.com/RAJESH2961/Recipe-sharing.git",
+    featured: false
+  },
+  {
+    id: 10,
+    title: "Burger Zesty Food-Ordering",
+    description: "Online burger ordering system with real-time menu and cart.",
+    techStack: ["React.js","Redux API"],
+    githubUrl: "https://github.com/RAJESH2961/Burgster-Zesty-Food-Ordering.git",
+    featured: false
+  }
+];
+
 
   const featuredProjects = allProjects.filter(project => project.featured);
   const displayProjects = showAllProjects ? allProjects : featuredProjects;
@@ -446,6 +450,7 @@ const Index = () => {
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 animate-fadeInUp px-4" style={{animationDelay: '1s'}}>
               <a
   href="/rajesh_fullstack_developer.pdf"
+  target="_blank"
   download
   className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${
     isDark
@@ -715,7 +720,7 @@ const Index = () => {
       <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-wider mb-4 text-sm sm:text-base">FEATURED PROJECTS</p>
+            {/* <p className="text-primary tracking-wider mb-4 text-sm sm:text-base">FEATURED PROJECTS</p> */}
             <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins mb-4 sm:mb-6 hover:text-gradient transition-all duration-500 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
@@ -805,19 +810,41 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-8 sm:mt-12 scroll-animate opacity-0 translate-y-8">
-            <Button 
-              variant="outline" 
-              className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 group ${
-                isDark 
-                  ? 'border-primary text-primary hover:bg-primary hover:text-white' 
-                  : 'border-primary text-primary hover:bg-primary hover:text-white'
-              }`}
-              onClick={() => setShowAllProjects(!showAllProjects)}
-            >
-              <Eye className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-bounce" />
-              {showAllProjects ? 'Show Featured Only' : 'View All Projects'}
-            </Button>
-          </div>
+  {/* Toggle Projects Button */}
+  <Button 
+    variant="outline" 
+    className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 group ${
+      isDark 
+        ? 'border-primary text-primary hover:bg-primary hover:text-white' 
+        : 'border-primary text-primary hover:bg-primary hover:text-white'
+    }`}
+    onClick={() => setShowAllProjects(!showAllProjects)}
+  >
+    <Eye className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-bounce" />
+    {showAllProjects ? 'Show Featured Only' : 'View All Projects'}
+  </Button>
+
+  {/* GitHub Redirect Button */}
+  <a 
+    href="https://github.com/RAJESH2961?tab=repositories" 
+    target="_blank" 
+    rel="noopener noreferrer"
+    className="inline-block mt-4"
+  >
+    <Button
+      variant="outline"
+      className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 group ${
+        isDark 
+          ? 'border-primary text-primary hover:bg-primary hover:text-white' 
+          : 'border-primary text-primary hover:bg-primary hover:text-white'
+      }`}
+    >
+      <Eye className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-bounce" />
+      See Everything I’ve Built
+    </Button>
+  </a>
+</div>
+
         </div>
       </section>
 
@@ -847,7 +874,7 @@ const Index = () => {
                   </div>
                   <div>
                     {/* <div className={`text-base sm:text-lg ${isDark ? 'text-white' : 'text-gray-900'}`}>Email</div> */}
-                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='mailto:grajesh2906@gmail.com'>Email me</a></div>
+                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='mailto:grajesh2906@gmail.com' target="_blank">Email me</a></div>
                   </div>
                 </div>
                 
@@ -857,7 +884,7 @@ const Index = () => {
                   </div>
                   <div>
                     {/* <div className={`text-base sm:text-lg ${isDark ? 'text-white' : 'text-gray-900'}`}>GitHub</div> */}
-                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='https://github.com/RAJESH2961'>Github</a></div>
+                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='https://github.com/RAJESH2961' target="_blank">Github</a></div>
                   </div>
                 </div>
                 
@@ -867,7 +894,7 @@ const Index = () => {
                   </div>
                   <div>
                     {/* <div className={`text-base sm:text-lg ${isDark ? 'text-white' : 'text-gray-900'}`}>LinkedIn</div> */}
-                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='https://www.linkedin.com/in/rajesh2906/'>LinkedIn</a></div>
+                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='https://www.linkedin.com/in/rajesh2906/' target="_blank">LinkedIn</a></div>
                   </div>
                 </div>
               </div>
@@ -991,7 +1018,7 @@ const Index = () => {
                 <Linkedin size={18} className="sm:w-5 sm:h-5" />
               </a>
               <a 
-                href="mailto:grajesh2906@gmail.com" 
+                href="mailto:grajesh2906@gmail.com" target="_blank"
                 className={`w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
                   isDark ? 'bg-white/10 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/20'
                 }`}

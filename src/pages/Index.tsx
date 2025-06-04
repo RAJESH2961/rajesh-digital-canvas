@@ -50,7 +50,7 @@ const Index = () => {
   const skillsData = {
     frontend: [
       "React", "JavaScript", "HTML5", "CSS3", 
-      "Tailwind CSS","Bootstrap", "SASS", "Redux", "Next.js", "Responsive Design","Framer Motion"
+      "Tailwind CSS","Bootstrap", "SASS", "Redux", "Next.js", "Responsive Design","Framer Motion", 'Three.js'
     ],
     backend: [
       "Python", "Django", "FastAPI", "SQL", "MongoDB", 
@@ -492,7 +492,7 @@ const Index = () => {
                 <p className={`text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 ${
                   isDark ? 'text-white/80' : 'text-gray-700'
                 }`}>
-                  Hi! I'm a passionate and curious Computer Science Engineering (CSE) student in my 3rd year at The Apollo University. I enjoy exploring the world of software development, building projects, and learning new technologies.
+                  Hi! I'm a passionate and curious Computer Science Engineering (CSE) student in my 3rd year at <span><a href='https://apollouniversity.edu.in/' target='_blank'>The Apollo Univerisity</a></span>. I enjoy exploring the world of software development, building projects, and learning new technologies.
                 </p>
                 <p className={`text-sm sm:text-base leading-relaxed ${
                   isDark ? 'text-white/70' : 'text-gray-600'

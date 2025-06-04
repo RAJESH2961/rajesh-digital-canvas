@@ -211,32 +211,40 @@ const Index = () => {
   const displayProjects = showAllProjects ? allProjects : featuredProjects;
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      console.log('Form submitted:', formData);
-      
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
+  try {
+    const response = await fetch("https://formspree.io/f/xpwrwdpp", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
       toast({
         title: "Message Sent Successfully! 🎉",
         description: "Thank you for reaching out. I'll get back to you soon!",
       });
-      
       setFormData({ name: '', email: '', message: '' });
-    } catch (error) {
-      console.error('Form submission error:', error);
-      toast({
-        title: "Error sending message",
-        description: "Please try again later or contact me directly.",
-        variant: "destructive",
-      });
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      throw new Error("Formspree error");
     }
-  };
+
+  } catch (error) {
+    console.error('Form submission error:', error);
+    toast({
+      title: "Error sending message",
+      description: "Please try again later or contact me directly.",
+      variant: "destructive",
+    });
+  } finally {
+    setIsSubmitting(false);
+  }
+};
+
 
   return (
     <div className={`min-h-screen transition-all duration-500 overflow-x-hidden ${

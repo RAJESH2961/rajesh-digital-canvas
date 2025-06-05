@@ -147,7 +147,7 @@ const Index = () => {
   {
     id: 4,
     title: "Multi disease Prediction",
-    description: "Predicts multiple diseases using ML and REST API with Docker setup.",
+    description: "An AI-powered system for predicting diseases like heart disease, diabetes based on user health data inputs.",
     techStack: ["Python", "Flask", "EDA", "MachineLearning"],
     githubUrl: "https://github.com/RAJESH2961/multi_disease_pred.git",
     liveUrl: "https://multi-disease-pred.onrender.com/",
@@ -183,8 +183,8 @@ const Index = () => {
   {
     id: 8,
     title: "Git gather",
-    description: "Fetches and displays GitHub profiles and repositories.",
-    techStack: ["Raeact.js","Tailwind CSS"],
+    description: "Git gather is a web application that allows users to easily organize, manage, and join meetups",
+    techStack: ["React.js","Tailwind CSS"],
     githubUrl: "https://github.com/RAJESH2961/GitGather.git",
     featured: false
   },
@@ -199,7 +199,7 @@ const Index = () => {
   {
     id: 10,
     title: "Burger Zesty Food-Ordering",
-    description: "Online burger ordering system with real-time menu and cart.",
+    description: "Online Food ordering system with real-time menu and cart.",
     techStack: ["React.js","Redux API"],
     githubUrl: "https://github.com/RAJESH2961/Burgster-Zesty-Food-Ordering.git",
     featured: false
@@ -322,12 +322,12 @@ const Index = () => {
             </div>
             
             <div className="flex items-center space-x-3 sm:space-x-4">
-              {/* <ThemeToggle /> */}
+              <ThemeToggle />
               <Button 
                 className={`hidden md:flex px-4 lg:px-6 py-2 rounded-full hover:scale-105 transition-all duration-300 font-medium ${
                   isDark
                     ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-                    : 'bg-primary hover:bg-primary-600 text-white hover:text-white'
+                    : 'bg-primary hover:bg-primary-600 text-black hover:text-white'
                 }`}
                 onClick={() => scrollToSection('contact')}
               >
@@ -462,8 +462,8 @@ const Index = () => {
   download
   className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${
     isDark
-      ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-      : 'bg-primary hover:bg-primary-600 text-white hover:text-white'
+      ? 'bg-primary hover:bg-primary-600  hover:text-white'
+      : 'bg-primary hover:bg-primary-600 hover:text-white'
   }`}
 >
   <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
@@ -823,8 +823,8 @@ const Index = () => {
     variant="outline" 
     className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 group ${
       isDark 
-        ? 'border-primary text-primary hover:bg-primary hover:text-white' 
-        : 'border-primary text-primary hover:bg-primary hover:text-white'
+        ? 'border-primary text-primary hover:bg-primary-600 hover:text-white' 
+        : 'border-primary text-primary hover:bg-primary-600 hover:text-white'
     }`}
     onClick={() => setShowAllProjects(!showAllProjects)}
   >
@@ -843,8 +843,8 @@ const Index = () => {
       variant="outline"
       className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 group ${
         isDark 
-          ? 'border-primary text-primary hover:bg-primary hover:text-white' 
-          : 'border-primary text-primary hover:bg-primary hover:text-white'
+          ? 'border-primary text-primary hover:bg-primary-600 hover:text-white' 
+          : 'border-primary text-primary hover:bg-primary-600 hover:text-white'
       }`}
     >
       <Eye className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-bounce" />
@@ -973,7 +973,7 @@ const Index = () => {
                   className={`w-full py-3 sm:py-4 rounded-xl text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${
                     isDark
                       ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-                      : 'bg-primary hover:bg-primary-600 text-white hover:text-white'
+                      : 'bg-primary hover:bg-primary-600 text-black hover:text-white'
                   }`}
                 >
                   {isSubmitting ? (

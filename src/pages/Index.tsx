@@ -132,7 +132,7 @@ const Index = () => {
     description: "Generates assignment papers with custom logos using Flask backend.",
     techStack: ["Python", "Flask"],
     githubUrl: "https://github.com/RAJESH2961/assignment-logo.git",
-    liveUrl: "https://multi-disease-pred.onrender.com/",
+    liveUrl: "https://assignment-paper-generator.onrender.com/",
     featured: true
   },
   {

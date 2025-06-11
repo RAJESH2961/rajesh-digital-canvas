@@ -495,7 +495,7 @@ const Index = () => {
                 <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins mb-4 sm:mb-6 hover:text-gradient transition-all duration-500 ${
                   isDark ? 'text-white' : 'text-gray-900'
                 }`}>
-                  I'm a Student
+{/*                   I'm a Student */}
                 </h2>
                 <p className={`text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 ${
                   isDark ? 'text-white/80' : 'text-gray-700'

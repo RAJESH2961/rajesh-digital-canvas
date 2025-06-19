@@ -123,7 +123,7 @@ const Index = () => {
     description: "Real-time stock prediction using machine learning with interactive frontend.",
     techStack: ["React", "Django", "MachineLearning", "Postman", "SQL", "JWT Authentication", "Three.js"],
     githubUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
-    liveUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
+    liveUrl: "https://stock-prediction-portal-magn.onrender.com",
     featured: true
   },
   {

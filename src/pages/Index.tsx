@@ -119,7 +119,7 @@ const Index = () => {
  const allProjects = [
   {
     id: 1,
-    title: "Stock Prediction Portal (Coming soon)",
+    title: "Stock Prediction Portal",
     description: "Real-time stock prediction using machine learning with interactive frontend.",
     techStack: ["React", "Django", "MachineLearning", "Postman", "SQL", "JWT Authentication", "Three.js"],
     githubUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
@@ -132,7 +132,7 @@ const Index = () => {
     description: "Generates assignment papers with custom logos using Flask backend.",
     techStack: ["Python", "Flask"],
     githubUrl: "https://github.com/RAJESH2961/assignment-logo.git",
-    liveUrl: "https://multi-disease-pred.onrender.com/",
+    liveUrl: "https://assignment-paper-generator.onrender.com/",
     featured: true
   },
   {

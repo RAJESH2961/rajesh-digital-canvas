@@ -33,7 +33,7 @@ const Index = () => {
       duration: "March 2025 - June 2025",
       location: "Online UttarPradesh",
       // description: "Designed and implemented secure RESTful APIs with Django REST Framework and JWT, optimized database queries using ORM and raw SQL, integrated third-party APIs, ensured data validation and serialization, performed API testing with Postman, managed code with Git, and collaborated in Agile teams.",
-      description : "Integrated Amazon Ads API to efficiently fetch and store advertising data using Django models. - Developed robust RESTful APIs with Django REST Framework, enhancing frontend-backend communication. - Implemented JWT-based authentication for secure API access, ensuring data protection."
+      description : "Integrated Amazon Ads API to efficiently fetch and store advertising data using Django models. - Developed robust RESTful APIs with Django REST Framework, enhancing frontend-backend communication. - Implemented JWT-based authentication for secure API access, ensuring data protection.",
       technologies: ["Django", "DjangoRestFramework", "Postman", "API testing"]
     },
     {

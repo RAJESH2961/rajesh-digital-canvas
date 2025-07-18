@@ -523,7 +523,7 @@ const Index = () => {
                   isDark ? 'bg-gradient-to-br from-primary/30 to-purple-500/30' : 'bg-gradient-to-br from-primary/20 to-purple-500/20'
                 }`}>
                   <img 
-        src="/demo.png" 
+        src="/image.png" 
         alt="Rajesh Image" 
         className="w-full h-full object-cover rounded-full  ring-2 ring-purple-600"
       />

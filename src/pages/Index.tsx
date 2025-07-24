@@ -79,7 +79,9 @@ const Index = () => {
             entry.target.classList.remove('opacity-0', 'translate-y-8');
             // Clean up will-change after animation
             setTimeout(() => {
-              entry.target.style.willChange = 'auto';
+              if (entry.target instanceof HTMLElement) {
+                entry.target.style.willChange = 'auto';
+              }
             }, 500);
           }, index * 100);
         }
@@ -95,7 +97,9 @@ const Index = () => {
     return () => {
       observer.disconnect();
       sections.forEach((section) => {
-        section.style.willChange = 'auto';
+        if (section instanceof HTMLElement) {
+          section.style.willChange = 'auto';
+        }
       });
     };
   }, []);

@@ -118,6 +118,14 @@ const Index = () => {
   };
 
  const allProjects = [
+    {
+    id: 7,
+    title: "Skill Share(Coming soon)",
+    description: "A platform which is used to exchange skill based on demand",
+    techStack: ["React.js", "Python"],
+    githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/AdviceGenerator",
+    featured: true
+  },
   {
     id: 1,
     title: "Stock Prediction Portal",
@@ -173,14 +181,7 @@ const Index = () => {
 
     featured: true
   },
-  // {
-  //   id: 7,
-  //   title: "Advice generator",
-  //   description: "Displays random advice quotes using API calls and React UI.",
-  //   techStack: ["React.js", "Bootstrap5"],
-  //   githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/AdviceGenerator",
-  //   featured: false
-  // },
+
   {
     id: 8,
     title: "Git gather",

@@ -63,49 +63,72 @@ const Index = () => {
     ]
   };
 
-  // Intersection Observer for scroll animations
+  // Optimized Intersection Observer for scroll animations
   useEffect(() => {
     const observerOptions = {
-      threshold: 0.1,
-      rootMargin: '0px 0px -50px 0px'
+      threshold: 0.15,
+      rootMargin: '0px 0px -100px 0px'
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
+      entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('animate-fadeInUp');
-          entry.target.classList.remove('opacity-0', 'translate-y-8');
+          // Add staggered delay for better visual flow
+          setTimeout(() => {
+            entry.target.classList.add('animate-fadeInUp');
+            entry.target.classList.remove('opacity-0', 'translate-y-8');
+            // Clean up will-change after animation
+            setTimeout(() => {
+              entry.target.style.willChange = 'auto';
+            }, 500);
+          }, index * 100);
         }
       });
     }, observerOptions);
 
     const sections = document.querySelectorAll('.scroll-animate');
-    sections.forEach((section) => observer.observe(section));
+    sections.forEach((section) => {
+      section.classList.add('gpu-accelerated');
+      observer.observe(section);
+    });
 
-    return () => observer.disconnect();
+    return () => {
+      observer.disconnect();
+      sections.forEach((section) => {
+        section.style.willChange = 'auto';
+      });
+    };
   }, []);
 
+  // Optimized typewriter animation with requestAnimationFrame
   useEffect(() => {
     const currentWord = words[currentWordIndex];
-    const typingSpeed = isDeleting ? 50 : 150;
+    const typingSpeed = isDeleting ? 30 : 100; // Faster speeds for smoother animation
+    let animationId: number;
 
-    const timeout = setTimeout(() => {
-      if (!isDeleting) {
-        if (typedText.length < currentWord.length) {
-          setTypedText(currentWord.slice(0, typedText.length + 1));
+    const animate = () => {
+      const timeout = setTimeout(() => {
+        if (!isDeleting) {
+          if (typedText.length < currentWord.length) {
+            setTypedText(currentWord.slice(0, typedText.length + 1));
+          } else {
+            // Pause before deletion with shorter delay
+            setTimeout(() => setIsDeleting(true), 1500);
+          }
         } else {
-          setTimeout(() => setIsDeleting(true), 2000);
+          if (typedText.length > 0) {
+            setTypedText(currentWord.slice(0, typedText.length - 1));
+          } else {
+            setIsDeleting(false);
+            setCurrentWordIndex((prev) => (prev + 1) % words.length);
+          }
         }
-      } else {
-        if (typedText.length > 0) {
-          setTypedText(currentWord.slice(0, typedText.length - 1));
-        } else {
-          setIsDeleting(false);
-          setCurrentWordIndex((prev) => (prev + 1) % words.length);
-        }
-      }
-    }, typingSpeed);
+      }, typingSpeed);
 
+      return timeout;
+    };
+
+    const timeout = animate();
     return () => clearTimeout(timeout);
   }, [typedText, currentWordIndex, isDeleting, words]);
 
@@ -356,7 +379,7 @@ const Index = () => {
               <div className="flex flex-col space-y-1 pt-4">
                 <button 
                   onClick={() => scrollToSection('home')} 
-                  className={`text-left px-4 py-3 rounded-lg hover:scale-105 transition-all duration-300 font-medium w-full ${
+                  className={`text-left px-4 py-3 rounded-lg smooth-hover transition-all duration-200 font-medium w-full gpu-accelerated ${
                     isDark 
                       ? 'text-white hover:bg-white/10' 
                       : 'text-gray-900 hover:bg-gray-100'
@@ -424,8 +447,8 @@ const Index = () => {
       <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative z-10">
         <div className="container mx-auto max-w-4xl text-center">
           <div className="space-y-6 sm:space-y-8 animate-fadeInUp">
-            {/* Availability badge */}
-            <div className={`inline-flex items-center px-3 sm:px-4 py-2 rounded-full border text-sm mb-6 sm:mb-8 backdrop-blur-sm transition-all duration-300 animate-float ${
+            {/* Availability badge with optimized animation */}
+            <div className={`inline-flex items-center px-3 sm:px-4 py-2 rounded-full border text-sm mb-6 sm:mb-8 backdrop-blur-sm transition-all duration-200 animate-float gpu-accelerated ${
               isDark 
                 ? 'bg-white/5 border-white/10 text-white/80 hover:bg-white/10' 
                 : 'bg-white/70 border-gray-300 text-gray-800 hover:bg-white/90 shadow-lg'
@@ -444,9 +467,9 @@ const Index = () => {
                 <br />
                 <span className="text-primary hover:scale-105 transition-transform duration-300 cursor-default inline-block">GANGADHARAM</span>
               </h1>
-              <div className="text-lg sm:text-xl md:text-2xl font-light animate-fadeInUp" style={{animationDelay: '0.6s'}}>
-                <span className="text-gradient-blue animate-float">{typedText}</span>
-                <span className="animate-pulse text-primary">|</span>
+              <div className="text-lg sm:text-xl md:text-2xl font-light animate-fadeInUp gpu-accelerated" style={{animationDelay: '0.6s'}}>
+                <span className="text-gradient-blue gpu-accelerated">{typedText}</span>
+                <span className="animate-pulse text-primary gpu-accelerated">|</span>
               </div>
             </div>
             
@@ -513,9 +536,9 @@ const Index = () => {
               </div>
             </div>
             
-            {/* Profile Image */}
+            {/* Profile Image with optimized animation */}
             <div className="relative scroll-animate opacity-0 translate-y-8">
-              <div className={`w-full max-w-sm sm:max-w-md mx-auto aspect-square rounded-full backdrop-blur-sm border flex items-center justify-center animate-float hover:scale-105 transition-all duration-500 ${
+              <div className={`w-full max-w-sm sm:max-w-md mx-auto aspect-square rounded-full backdrop-blur-sm border flex items-center justify-center animate-float smooth-hover transition-all duration-300 gpu-accelerated ${
                 isDark 
                   ? 'bg-gradient-to-br from-primary/20 to-accent/20 border-white/10' 
                   : 'bg-gradient-to-br from-primary/10 to-accent/10 border-gray-300 shadow-xl'

@@ -28,6 +28,16 @@ const Index = () => {
   const experiences = [
     {
       id: 1,
+      company: "Webvoid technologies pvt ltd",
+      position: "Full stack Developer",
+      duration: "November 2025 - present",
+      location: "Hybrid Chittoor,AP",
+      // description: "Designed and implemented secure RESTful APIs with Django REST Framework and JWT, optimized database queries using ORM and raw SQL, integrated third-party APIs, ensured data validation and serialization, performed API testing with Postman, managed code with Git, and collaborated in Agile teams.",
+      description : "Full-stack engineer with hands-on experience designing, developing, and deploying production systems using React, FastAPI, and PostgreSQL. Specialized in REST API architecture, query optimization, and performance tuning for scalable backend services. Experienced with Dockerized microservices, CI/CD automation, and AWS cloud infrastructure for secure, highly available deployments. Strong contributor in Agile teams, participating in system design, code reviews, and production releases",
+      technologies: ["ReactJs", "FastAPI", "Typescript","Postman", "AWS", "CI/CD", "Docker", "PostgreSQL"]
+    },
+    {
+      id: 2,
       company: "Digital Hercules Innovations",
       position: "Django Developer",
       duration: "March 2025 - June 2025",
@@ -37,7 +47,7 @@ const Index = () => {
       technologies: ["Django", "DjangoRestFramework", "Postman", "API testing"]
     },
     {
-      id: 2,
+      id: 3,
       company: "Try Zen Tech IT Solutions",
       position: "Web Developer",
       duration: "Dec 2023 - may2024",

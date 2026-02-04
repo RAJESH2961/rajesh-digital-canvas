@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
+# Rajesh Gangadharam — Developer Portfolio
 
-## Project info
+A modern **software developer portfolio** built with React + TypeScript. It showcases full‑stack projects (Django/FastAPI + React) and ML demos with a performance‑minded UI (scroll-triggered animations + Three.js background).
 
-**URL**: https://lovable.dev/projects/d846be62-a368-4080-b2ae-4bf241aa92dd
+![Portfolio preview](public/demo.png)
 
-## How can I edit this code?
+## Links
 
-There are several ways of editing your application.
+- Live site: _(add your URL)_  
+- Resume: `public/Rajesh_FullStack_Developer.pdf`
+- GitHub: `https://github.com/RAJESH2961`
+- LinkedIn: `https://www.linkedin.com/in/rajesh2906/`
 
-**Use Lovable**
+## Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/d846be62-a368-4080-b2ae-4bf241aa92dd) and start prompting.
+- Frontend: React 18, TypeScript, Vite (SWC), React Router
+- UI: Tailwind CSS, shadcn/ui (Radix UI), lucide-react
+- UX/Effects: Three.js + @react-three/fiber/@react-three/drei, scroll animations (IntersectionObserver)
+- Tooling: ESLint, PostCSS
 
-Changes made via Lovable will be committed automatically to this repo.
+## What’s Inside
 
-**Use your preferred IDE**
+- Responsive, recruiter-friendly layout (About, Experience, Projects, Contact)
+- Dark/light mode with persisted preference
+- Contact form integration (Formspree)
+- 3D particle background (React Three Fiber)
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+## Local Development
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## Build
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+```bash
+npm run build
+npm run preview
+```
 
-**Use GitHub Codespaces**
+## SEO & Deployment Notes
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/d846be62-a368-4080-b2ae-4bf241aa92dd) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+- Update the placeholder domain in:
+  - `index.html` (canonical + Open Graph URLs)
+  - `public/robots.txt` (Sitemap URL)
+  - `public/sitemap.xml`
+- If deploying as an SPA, ensure your host rewrites unknown routes to `index.html` (Netlify/Vercel do this via config; GitHub Pages needs extra setup).

@@ -9,10 +9,18 @@ import { useToast } from "@/hooks/use-toast";
 import ModernThreeBackground from "@/components/ModernThreeBackground";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/contexts/ThemeContext";
+import { useLocation } from "react-router-dom";
 
+const TYPEWRITER_WORDS = ["FULL STACK WEB DEVELOPER", "ML ENTHUSIAST"] as const;
+const PATH_TO_SECTION: Record<string, string> = {
+  "/about": "about",
+  "/projects": "projects",
+  "/contact": "contact",
+};
 
 const Index = () => {
   const { isDark } = useTheme();
+  const location = useLocation();
   const [typedText, setTypedText] = useState('');
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
@@ -21,8 +29,6 @@ const Index = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [showAllProjects, setShowAllProjects] = useState(false);
   const { toast } = useToast();
-
-  const words = ["FULL STACK WEB DEVELOPER", "ML ENTHUSIAST"];
 
   // Experience data
   const experiences = [
@@ -114,11 +120,10 @@ const Index = () => {
     };
   }, []);
 
-  // Optimized typewriter animation with requestAnimationFrame
+  // Typewriter animation
   useEffect(() => {
-    const currentWord = words[currentWordIndex];
+    const currentWord = TYPEWRITER_WORDS[currentWordIndex];
     const typingSpeed = isDeleting ? 30 : 100; // Faster speeds for smoother animation
-    let animationId: number;
 
     const animate = () => {
       const timeout = setTimeout(() => {
@@ -134,7 +139,7 @@ const Index = () => {
             setTypedText(currentWord.slice(0, typedText.length - 1));
           } else {
             setIsDeleting(false);
-            setCurrentWordIndex((prev) => (prev + 1) % words.length);
+            setCurrentWordIndex((prev) => (prev + 1) % TYPEWRITER_WORDS.length);
           }
         }
       }, typingSpeed);
@@ -144,7 +149,16 @@ const Index = () => {
 
     const timeout = animate();
     return () => clearTimeout(timeout);
-  }, [typedText, currentWordIndex, isDeleting, words]);
+  }, [typedText, currentWordIndex, isDeleting]);
+
+  useEffect(() => {
+    const sectionId = PATH_TO_SECTION[location.pathname];
+    if (!sectionId) return;
+
+    requestAnimationFrame(() => {
+      document.getElementById(sectionId)?.scrollIntoView({ behavior: "smooth" });
+    });
+  }, [location.pathname]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);

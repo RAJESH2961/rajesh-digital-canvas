@@ -498,7 +498,7 @@ const Index = () => {
             {/* Call to action buttons with improved mobile layout */}
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 animate-fadeInUp px-4" style={{animationDelay: '1s'}}>
               <a
-  href="/Rajesh_Fullstack_Developer.pdf"
+  href="/Rajesh_FullStack_Developer.pdf"
   target="_blank"
   download
   className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${

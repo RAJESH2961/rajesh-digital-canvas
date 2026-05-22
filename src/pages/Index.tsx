@@ -473,308 +473,511 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section with improved mobile responsiveness */}
-      <section id="home" className="min-h-screen flex items-center justify-center px-4 sm:px-6 pt-20 relative z-10">
+      {/* Hero Section */}
+      <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20 relative z-10">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="space-y-6 sm:space-y-8 animate-fadeInUp">
-            {/* Availability badge with optimized animation */}
-            <div className={`inline-flex items-center px-3 sm:px-4 py-2 rounded-full border text-sm mb-6 sm:mb-8 backdrop-blur-sm transition-all duration-200 animate-float gpu-accelerated ${
-              isDark 
-                ? 'bg-white/5 border-white/10 text-white/80 hover:bg-white/10' 
+          <div className="space-y-6 sm:space-y-7 animate-fadeInUp">
+
+            {/* Availability badge */}
+            <div className={`inline-flex items-center px-4 py-2 rounded-full border text-sm backdrop-blur-sm transition-all duration-200 animate-float gpu-accelerated ${
+              isDark
+                ? 'bg-white/5 border-white/10 text-white/80 hover:bg-white/10'
                 : 'bg-white/70 border-gray-300 text-gray-800 hover:bg-white/90 shadow-lg'
             }`}>
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-3 animate-pulse"></span>
-              Available for new opportunities
+              <span className="w-2 h-2 bg-green-400 rounded-full mr-2.5 animate-pulse"></span>
+              Open to full-time &amp; freelance opportunities
             </div>
-            
-            {/* Main Title */}
-            <div className="space-y-3 sm:space-y-4">
-              <p className="text-primary tracking-wider text-base sm:text-lg animate-fadeInUp font-medium" style={{animationDelay: '0.2s'}}>Hello! I Am</p>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins leading-tight animate-fadeInUp font-semibold" style={{animationDelay: '0.4s'}}>
-                <span className={`hover:text-gradient transition-all duration-500 cursor-default ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}>RAJESH</span>
-                <br />
-                <span className="text-primary hover:scale-105 transition-transform duration-300 cursor-default inline-block">GANGADHARAM</span>
+
+            {/* Name + role */}
+            <div className="space-y-3">
+              <p className="text-primary tracking-widest text-xs sm:text-sm uppercase font-semibold animate-fadeInUp" style={{animationDelay: '0.2s'}}>
+                Full Stack Developer · ML Enthusiast
+              </p>
+              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins leading-none font-bold animate-fadeInUp" style={{animationDelay: '0.3s'}}>
+                <span className={`block ${isDark ? 'text-white' : 'text-gray-900'}`}>Rajesh</span>
+                <span className="block text-primary">Gangadharam</span>
               </h1>
-              <div className="text-lg sm:text-xl md:text-2xl font-light animate-fadeInUp gpu-accelerated" style={{animationDelay: '0.6s'}}>
+              <div className="text-base sm:text-lg md:text-xl font-light animate-fadeInUp gpu-accelerated h-7" style={{animationDelay: '0.5s'}}>
                 <span className="text-gradient-blue gpu-accelerated">{typedText}</span>
                 <span className="animate-pulse text-primary gpu-accelerated">|</span>
               </div>
             </div>
-            
-            <p className={`text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed animate-fadeInUp px-4 ${
-              isDark ? 'text-white/70' : 'text-gray-700'
-            }`} style={{animationDelay: '0.8s'}}>
-              Building modern web experiences with Django, React, and Next.js code that connects and converts.
+
+            {/* Value proposition */}
+            <p className={`text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed animate-fadeInUp px-2 ${
+              isDark ? 'text-white/65' : 'text-gray-600'
+            }`} style={{animationDelay: '0.65s'}}>
+              I build <span className="text-primary font-medium">production-grade</span> web apps — from REST APIs to interactive UIs — and ship them to cloud. Currently at{' '}
+              <span className={`font-medium ${isDark ? 'text-white/90' : 'text-gray-800'}`}>Webvoid Technologies</span>.
             </p>
-            
-            {/* Call to action buttons with improved mobile layout */}
-            <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center mt-8 sm:mt-12 animate-fadeInUp px-4" style={{animationDelay: '1s'}}>
+
+            {/* Key tech pills */}
+            <div className="flex flex-wrap justify-center gap-2 animate-fadeInUp" style={{animationDelay: '0.75s'}}>
+              {["React", "FastAPI", "Django", "TypeScript", "PostgreSQL", "Docker", "AWS"].map((tech) => (
+                <span
+                  key={tech}
+                  className={`text-xs px-3 py-1 rounded-full border font-medium transition-all duration-200 hover:scale-105 hover:border-primary/60 hover:text-primary ${
+                    isDark
+                      ? 'bg-white/5 border-white/15 text-white/70'
+                      : 'bg-gray-50 border-gray-200 text-gray-600'
+                  }`}
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            {/* CTA buttons */}
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fadeInUp" style={{animationDelay: '0.9s'}}>
               <a
-  href="/Rajesh_FullStack_Developer.pdf"
-  target="_blank"
-  download
-  className={`w-full sm:w-auto inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${
-    isDark
-      ? 'bg-primary hover:bg-primary-600  hover:text-white'
-      : 'bg-primary hover:bg-primary-600 hover:text-white'
-  }`}
->
-  <Download className="w-5 h-5 mr-2 group-hover:animate-bounce" />
-  Download Resume
-</a>
-              <Button 
-                variant="outline" 
-                className={`w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 rounded-full text-base sm:text-lg hover:scale-105 transition-all duration-300 ${
-                  isDark 
-                    ? 'border-white/20 text-white hover:bg-white/10 hover:text-white hover:border-white/30' 
-                    : 'border-gray-400 text-gray-800 hover:bg-gray-50 hover:text-gray-900 hover:border-gray-500'
-                }`} 
+                href="/Rajesh_FullStack_Developer.pdf"
+                target="_blank"
+                download
+                className={`w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full text-sm sm:text-base font-semibold group hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 ${
+                  isDark
+                    ? 'bg-primary hover:bg-primary-600 text-white'
+                    : 'bg-primary hover:bg-primary-600 text-white'
+                }`}
+              >
+                <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+                Download Resume
+              </a>
+              <Button
+                variant="outline"
+                className={`w-full sm:w-auto px-7 py-3 rounded-full text-sm sm:text-base font-semibold hover:scale-105 transition-all duration-300 ${
+                  isDark
+                    ? 'border-white/20 text-white hover:bg-white/10 hover:border-white/30'
+                    : 'border-gray-400 text-gray-800 hover:bg-gray-50 hover:border-gray-500'
+                }`}
                 onClick={() => scrollToSection('contact')}
               >
-                Get In Touch
+                Let's Talk
               </Button>
+            </div>
+
+            {/* Social links */}
+            <div className="flex items-center justify-center gap-4 animate-fadeInUp" style={{animationDelay: '1.05s'}}>
+              <a
+                href="https://github.com/RAJESH2961"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 text-xs sm:text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 ${
+                  isDark ? 'text-white/50' : 'text-gray-500'
+                }`}
+              >
+                <Github className="w-4 h-4" />
+                GitHub
+              </a>
+              <span className={`w-px h-4 ${isDark ? 'bg-white/20' : 'bg-gray-300'}`} />
+              <a
+                href="https://www.linkedin.com/in/rajesh2906/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`flex items-center gap-1.5 text-xs sm:text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 ${
+                  isDark ? 'text-white/50' : 'text-gray-500'
+                }`}
+              >
+                <Linkedin className="w-4 h-4" />
+                LinkedIn
+              </a>
+              <span className={`w-px h-4 ${isDark ? 'bg-white/20' : 'bg-gray-300'}`} />
+              <a
+                href="mailto:grajesh2906@gmail.com"
+                className={`flex items-center gap-1.5 text-xs sm:text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 ${
+                  isDark ? 'text-white/50' : 'text-gray-500'
+                }`}
+              >
+                <Mail className="w-4 h-4" />
+                Email
+              </a>
+            </div>
+
+            {/* Quick stats */}
+            <div className={`inline-flex items-center gap-6 sm:gap-10 px-6 sm:px-10 py-3 sm:py-4 rounded-2xl border backdrop-blur-sm animate-fadeInUp ${
+              isDark ? 'bg-white/5 border-white/10' : 'bg-white/80 border-gray-200 shadow-sm'
+            }`} style={{animationDelay: '1.15s'}}>
+              {[
+                { value: "2+", label: "Years Exp" },
+                { value: "10+", label: "Projects" },
+                { value: "3", label: "Companies" },
+              ].map((stat, i) => (
+                <div key={stat.label} className="text-center">
+                  <div className={`text-xl sm:text-2xl font-bold font-poppins ${isDark ? 'text-white' : 'text-gray-900'}`}>{stat.value}</div>
+                  <div className={`text-[10px] sm:text-xs tracking-wide ${isDark ? 'text-white/50' : 'text-gray-500'}`}>{stat.label}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
+
+        {/* Scroll nudge */}
+        <button
+          onClick={() => scrollToSection('about')}
+          className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 group transition-all duration-300 hover:scale-110 ${
+            isDark ? 'text-white/30 hover:text-white/60' : 'text-gray-400 hover:text-gray-600'
+          }`}
+          aria-label="Scroll to about"
+        >
+          <span className="text-[10px] tracking-widest uppercase">Explore</span>
+          <div className={`w-5 h-8 rounded-full border flex items-start justify-center pt-1.5 ${
+            isDark ? 'border-white/20' : 'border-gray-300'
+          }`}>
+            <div className={`w-1 h-2 rounded-full animate-bounce ${isDark ? 'bg-white/50' : 'bg-gray-400'}`} />
+          </div>
+        </button>
       </section>
 
-      {/* About Section with improved mobile layout */}
-      <section id="about" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
+      {/* About Section */}
+      <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center">
-            <div className="space-y-6 sm:space-y-8 scroll-animate opacity-0 translate-y-8">
-              <div>
-                <p className="text-primary tracking-wider mb-4 text-sm sm:text-base">ABOUT ME</p>
-                <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins mb-4 sm:mb-6 hover:text-gradient transition-all duration-500 ${
-                  isDark ? 'text-white' : 'text-gray-900'
-                }`}>
-                  I'm a Student
-                </h2>
-                <p className={`text-base sm:text-lg leading-relaxed mb-4 sm:mb-6 ${
-                  isDark ? 'text-white/80' : 'text-gray-700'
-                }`}>
-                  Hi! I'm a passionate and curious Computer Science Engineering (CSE) student in my 3rd year at <span><a href='https://apollouniversity.edu.in/' target='_blank'>The Apollo Univerisity</a></span>. I enjoy exploring the world of software development, building projects, and learning new technologies.
-                </p>
-                <p className={`text-sm sm:text-base leading-relaxed ${
-                  isDark ? 'text-white/70' : 'text-gray-600'
-                }`}> 
-                  I make impactful web applications using modern technologies like React, 
-                  Next.js, Django and cloud platforms.
-                </p>
-              </div>
-            </div>
-            
-            {/* Profile Image with optimized animation */}
-            <div className="relative scroll-animate opacity-0 translate-y-8">
-              <div className={`w-full max-w-sm sm:max-w-md mx-auto aspect-square rounded-full backdrop-blur-sm border flex items-center justify-center animate-float smooth-hover transition-all duration-300 gpu-accelerated ${
-                isDark 
-                  ? 'bg-gradient-to-br from-primary/20 to-accent/20 border-white/10' 
-                  : 'bg-gradient-to-br from-primary/10 to-accent/10 border-gray-300 shadow-xl'
+          <div className="text-center mb-12 scroll-animate opacity-0 translate-y-8">
+            <p className="text-primary tracking-wider mb-3 text-xs sm:text-sm uppercase font-semibold">About Me</p>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold ${
+              isDark ? 'text-white' : 'text-gray-900'
+            }`}>
+              Who I Am
+            </h2>
+          </div>
+
+          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-start">
+            {/* Left — content */}
+            <div className="space-y-8 scroll-animate opacity-0 translate-y-8">
+
+              {/* Intro */}
+              <p className={`text-base sm:text-lg leading-relaxed ${
+                isDark ? 'text-white/75' : 'text-gray-600'
               }`}>
-                <div className={`w-54 sm:w-21 h-54 sm:h-21 rounded-full flex items-center justify-center ${
-                  isDark ? 'bg-gradient-to-br from-primary/30 to-purple-500/30' : 'bg-gradient-to-br from-primary/20 to-purple-500/20'
-                }`}>
-                  <img 
-        src="/image.png" 
-        alt="Rajesh Image" 
-        className="w-full h-full object-cover rounded-full  ring-2 ring-purple-600"
-      />
+                I'm a <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Final Year B.Tech CSE student</span> at{' '}
+                <a href="https://apollouniversity.edu.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-2">
+                  The Apollo University
+                </a>
+                , with a strong foundation built through a{' '}
+                <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Diploma in Computer Science Engineering</span>.
+                I bridge academic depth with real-world industry experience — already working as a full-stack engineer while finishing my degree.
+              </p>
+
+              {/* Education path */}
+              <div>
+                <p className={`text-xs uppercase tracking-widest font-semibold mb-5 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>Education Path</p>
+                <div className="relative">
+                  {/* Connector line */}
+                  <div className={`absolute left-6 top-12 bottom-12 w-px ${
+                    isDark
+                      ? 'bg-gradient-to-b from-primary/60 via-primary/20 to-transparent'
+                      : 'bg-gradient-to-b from-primary/40 via-primary/15 to-transparent'
+                  }`} />
+
+                  <div className="space-y-4">
+                    {/* B.Tech — current */}
+                    <div className={`relative flex gap-4 p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+                      isDark
+                        ? 'bg-primary/10 border-primary/30 hover:border-primary/50 hover:shadow-primary/10'
+                        : 'bg-primary/5 border-primary/20 hover:border-primary/35 hover:shadow-primary/10'
+                    }`}>
+                      <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg font-bold z-10 ${
+                        isDark ? 'bg-primary/20 text-primary' : 'bg-primary/15 text-primary'
+                      }`}>🎓</div>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-center gap-2 flex-wrap mb-0.5">
+                          <p className={`text-sm font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>B.Tech — CSE</p>
+                          <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/15 text-green-500 border border-green-500/25 font-semibold whitespace-nowrap">Current · Final Year</span>
+                        </div>
+                        <p className={`text-xs ${isDark ? 'text-white/50' : 'text-gray-500'}`}>The Apollo University</p>
+                        <div className="flex items-center gap-1.5 mt-1.5">
+                          <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${
+                            isDark ? 'bg-white/8 border-white/15 text-white/50' : 'bg-gray-100 border-gray-200 text-gray-500'
+                          }`}>2024 – 2027</span>
+                          <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium text-primary ${
+                            isDark ? 'bg-primary/10 border-primary/25' : 'bg-primary/8 border-primary/20'
+                          }`}>B.Tech</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Diploma */}
+                    <div className={`relative flex gap-4 p-4 rounded-2xl border transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg ${
+                      isDark
+                        ? 'bg-white/4 border-white/10 hover:border-white/20 hover:shadow-white/5'
+                        : 'bg-white border-gray-200 hover:border-gray-300 hover:shadow-gray-100'
+                    }`}>
+                      <div className={`flex-shrink-0 w-12 h-12 rounded-xl flex items-center justify-center text-lg z-10 ${
+                        isDark ? 'bg-white/8 text-white/60' : 'bg-gray-100 text-gray-500'
+                      }`}>📜</div>
+                      <div className="flex-1 min-w-0">
+                        <p className={`text-sm font-bold mb-0.5 ${isDark ? 'text-white' : 'text-gray-900'}`}>Diploma — CSE</p>
+                        <p className={`text-xs ${isDark ? 'text-white/50' : 'text-gray-500'}`}>State Board of Technical Education, AP</p>
+                        <div className="flex items-center gap-1.5 mt-1.5">
+                          <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${
+                            isDark ? 'bg-white/8 border-white/15 text-white/50' : 'bg-gray-100 border-gray-200 text-gray-500'
+                          }`}>2021 – 2024</span>
+                          <span className={`text-[10px] px-2 py-0.5 rounded-full border font-medium ${
+                            isDark ? 'bg-white/8 border-white/15 text-white/50' : 'bg-gray-100 border-gray-200 text-gray-500'
+                          }`}>Diploma</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Unique differentiators */}
+              <div>
+                <p className={`text-xs uppercase tracking-widest font-semibold mb-4 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>Why Hire Me</p>
+                <div className="space-y-3">
+                  {[
+                    {
+                      icon: "🚀",
+                      accent: "from-violet-500 to-primary",
+                      title: "Employed in industry before graduation",
+                      desc: "Not waiting for a first job — already shipping production code at Webvoid Technologies. React, FastAPI, Docker, AWS, CI/CD pipelines in real systems, not toy projects.",
+                      tag: "Industry-ready"
+                    },
+                    {
+                      icon: "🤖",
+                      accent: "from-cyan-500 to-blue-500",
+                      title: "Full-stack + ML — rare combo",
+                      desc: "Built stock prediction engines and multi-disease detection models that plug into live web apps. Most devs do one or the other — I do both.",
+                      tag: "Dual skill set"
+                    },
+                    {
+                      icon: "🏗️",
+                      accent: "from-emerald-500 to-teal-500",
+                      title: "10+ shipped projects, not GitHub graveyards",
+                      desc: "Every project is deployed, documented, and demo-able. Django, Flask, React, Next.js — I build things end-to-end and see them through to launch.",
+                      tag: "Proven executor"
+                    },
+                    {
+                      icon: "📐",
+                      accent: "from-orange-500 to-amber-500",
+                      title: "3 years of hands-on CS before B.Tech",
+                      desc: "Diploma gave me low-level fundamentals — networking, OS, databases — before university. I understand why things work, not just how to use them.",
+                      tag: "Deep foundation"
+                    },
+                  ].map((point) => (
+                    <div key={point.title} className={`group relative flex gap-4 p-4 rounded-2xl border overflow-hidden transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg hover:border-primary/30 ${
+                      isDark
+                        ? 'bg-white/4 border-white/10 hover:bg-white/6 hover:shadow-primary/8'
+                        : 'bg-white border-gray-200 hover:shadow-gray-200/80'
+                    }`}>
+                      {/* Left color bar */}
+                      <div className={`absolute left-0 top-0 bottom-0 w-[3px] rounded-l-2xl bg-gradient-to-b ${point.accent} opacity-70 group-hover:opacity-100 transition-opacity duration-300`} />
+                      {/* Icon */}
+                      <span className={`flex-shrink-0 w-9 h-9 rounded-xl flex items-center justify-center text-base bg-gradient-to-br ${point.accent} bg-opacity-15`}>
+                        {point.icon}
+                      </span>
+                      <div className="flex-1 min-w-0">
+                        <div className="flex items-start justify-between gap-2 mb-1">
+                          <p className={`text-sm font-bold leading-snug group-hover:text-primary transition-colors duration-200 ${isDark ? 'text-white' : 'text-gray-900'}`}>{point.title}</p>
+                          <span className={`flex-shrink-0 text-[10px] px-2 py-0.5 rounded-full border font-semibold whitespace-nowrap ${
+                            isDark ? 'bg-white/8 border-white/15 text-white/50' : 'bg-gray-100 border-gray-200 text-gray-500'
+                          }`}>{point.tag}</span>
+                        </div>
+                        <p className={`text-xs leading-relaxed ${isDark ? 'text-white/55' : 'text-gray-500'}`}>{point.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
+
+            {/* Right — image */}
+            <div className="relative scroll-animate opacity-0 translate-y-8 lg:sticky lg:top-28">
+              <div className={`w-full max-w-sm sm:max-w-md mx-auto aspect-square rounded-full backdrop-blur-sm border flex items-center justify-center animate-float smooth-hover transition-all duration-300 gpu-accelerated ${
+                isDark
+                  ? 'bg-gradient-to-br from-primary/20 to-accent/20 border-white/10'
+                  : 'bg-gradient-to-br from-primary/10 to-accent/10 border-gray-300 shadow-xl'
+              }`}>
+                <img
+                  src="/image_copy.png"
+                  alt="Rajesh Gangadharam"
+                  className="w-full h-full object-cover rounded-full ring-2 ring-purple-600"
+                />
+              </div>
+
+              {/* Floating badge — current status */}
+              <div className={`absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium backdrop-blur-sm shadow-lg ${
+                isDark ? 'bg-black/70 border-white/10 text-white/80' : 'bg-white/90 border-gray-200 text-gray-700 shadow-md'
+              }`}>
+                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
+                Final Year · Currently Employed
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Skills Section with improved mobile grid */}
+      {/* Skills Section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-wider mb-4 text-sm sm:text-base">TECHNICAL SKILLS</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins mb-4 sm:mb-6 hover:text-gradient transition-all duration-500 ${
+        <div className="container mx-auto max-w-5xl">
+          <div className="text-center mb-10 sm:mb-14 scroll-animate opacity-0 translate-y-8">
+            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Technical Skills</p>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
               Technologies I Work With
             </h2>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 scroll-animate opacity-0 translate-y-8">
-            {/* Frontend Skills */}
-            <Card className={`w-[95%] mx-auto md:w-full backdrop-blur-sm border transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 ${
-              isDark 
-                ? 'bg-white/5 border-white/10 hover:bg-white/10' 
-                : 'bg-white/90 border-gray-300 hover:bg-white hover:shadow-xl'
-            }`}>
-              <CardHeader className="text-center">
-                <div className="w-14 sm:w-16 h-14 sm:h-16 mx-auto rounded-full bg-gradient-to-br from-blue-500/20 to-purple-500/20 flex items-center justify-center mb-4">
-                  <Code className="w-6 sm:w-8 h-6 sm:h-8 text-blue-500" />
-                </div>
-                <CardTitle className={`text-lg sm:text-xl ${isDark ? 'text-white' : 'text-gray-900'}`}>Frontend Development</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skillsData.frontend.map((skill, index) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
-                      className={`transition-all duration-300 hover:scale-105 text-xs sm:text-sm ${
-                        isDark 
-                          ? 'bg-blue-500/20 text-blue-300 border-blue-500/40 hover:bg-blue-500/30' 
-                          : 'bg-blue-100 text-blue-800 border-blue-300 hover:bg-blue-200'
-                      }`}
-                      style={{animationDelay: `${index * 0.05}s`}}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
 
-            {/* Backend Skills */}
-            <Card className={`w-[95%] mx-auto md:w-full backdrop-blur-sm border transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 ${
-              isDark 
-                ? 'bg-white/5 border-white/10 hover:bg-white/10' 
-                : 'bg-white/90 border-gray-300 hover:bg-white hover:shadow-xl'
-            }`}>
-              <CardHeader className="text-center">
-                <div className="w-14 sm:w-16 h-14 sm:h-16 mx-auto rounded-full bg-gradient-to-br from-green-500/20 to-teal-500/20 flex items-center justify-center mb-4">
-                  <Database className="w-6 sm:w-8 h-6 sm:h-8 text-green-500" />
+          <div className={`rounded-2xl border divide-y scroll-animate opacity-0 translate-y-8 ${
+            isDark ? 'bg-white/4 border-white/10 divide-white/8' : 'bg-white border-gray-200 divide-gray-100 shadow-sm'
+          }`}>
+            {[
+              {
+                icon: <Code className="w-4 h-4" />,
+                label: "Frontend",
+                color: "blue",
+                skills: skillsData.frontend,
+                pillDark: "bg-blue-500/15 text-blue-300 border-blue-500/25 hover:bg-blue-500/25",
+                pillLight: "bg-blue-50 text-blue-700 border-blue-200 hover:bg-blue-100",
+              },
+              {
+                icon: <Database className="w-4 h-4" />,
+                label: "Backend",
+                color: "emerald",
+                skills: skillsData.backend,
+                pillDark: "bg-emerald-500/15 text-emerald-300 border-emerald-500/25 hover:bg-emerald-500/25",
+                pillLight: "bg-emerald-50 text-emerald-700 border-emerald-200 hover:bg-emerald-100",
+              },
+              {
+                icon: <Wrench className="w-4 h-4" />,
+                label: "Tools & DevOps",
+                color: "orange",
+                skills: skillsData.other,
+                pillDark: "bg-orange-500/15 text-orange-300 border-orange-500/25 hover:bg-orange-500/25",
+                pillLight: "bg-orange-50 text-orange-700 border-orange-200 hover:bg-orange-100",
+              },
+            ].map((row) => (
+              <div key={row.label} className="flex flex-col sm:flex-row sm:items-start gap-4 p-5 sm:p-6">
+                <div className="flex items-center gap-2 sm:w-36 flex-shrink-0">
+                  <span className={`p-1.5 rounded-lg ${
+                    isDark ? 'bg-white/8 text-white/60' : 'bg-gray-100 text-gray-500'
+                  }`}>{row.icon}</span>
+                  <span className={`text-xs font-semibold uppercase tracking-wider ${
+                    isDark ? 'text-white/50' : 'text-gray-400'
+                  }`}>{row.label}</span>
                 </div>
-                <CardTitle className={`text-lg sm:text-xl ${isDark ? 'text-white' : 'text-gray-900'}`}>Backend Development</CardTitle>
-              </CardHeader>
-              <CardContent>
                 <div className="flex flex-wrap gap-2">
-                  {skillsData.backend.map((skill, index) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
-                      className={`transition-all duration-300 hover:scale-105 text-xs sm:text-sm ${
-                        isDark 
-                          ? 'bg-green-500/20 text-green-300 border-green-500/40 hover:bg-green-500/30' 
-                          : 'bg-green-100 text-green-800 border-green-300 hover:bg-green-200'
+                  {row.skills.map((skill) => (
+                    <span
+                      key={skill}
+                      className={`inline-block text-xs px-2.5 py-1 rounded-full border font-medium transition-all duration-200 hover:scale-105 cursor-default ${
+                        isDark ? row.pillDark : row.pillLight
                       }`}
-                      style={{animationDelay: `${index * 0.05}s`}}
                     >
                       {skill}
-                    </Badge>
+                    </span>
                   ))}
                 </div>
-              </CardContent>
-            </Card>
-
-            {/* Other Skills */}
-            <Card className={`w-[95%] mx-auto md:w-full backdrop-blur-sm border transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 ${
-              isDark 
-                ? 'bg-white/5 border-white/10 hover:bg-white/10' 
-                : 'bg-white/90 border-gray-300 hover:bg-white hover:shadow-xl'
-            }`}>
-              <CardHeader className="text-center">
-                <div className="w-14 sm:w-16 h-14 sm:h-16 mx-auto rounded-full bg-gradient-to-br from-orange-500/20 to-red-500/20 flex items-center justify-center mb-4">
-                  <Wrench className="w-6 sm:w-8 h-6 sm:h-8 text-orange-500" />
-                </div>
-                <CardTitle className={`text-lg sm:text-xl ${isDark ? 'text-white' : 'text-gray-900'}`}>Tools & Others</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2">
-                  {skillsData.other.map((skill, index) => (
-                    <Badge 
-                      key={skill} 
-                      variant="secondary" 
-                      className={`transition-all duration-300 hover:scale-105 text-xs sm:text-sm ${
-                        isDark 
-                          ? 'bg-orange-500/20 text-orange-300 border-orange-500/40 hover:bg-orange-500/30' 
-                          : 'bg-orange-100 text-orange-800 border-orange-300 hover:bg-orange-200'
-                      }`}
-                      style={{animationDelay: `${index * 0.05}s`}}
-                    >
-                      {skill}
-                    </Badge>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Experience Section */}
+      {/* Experience Section — Vertical Timeline */}
       <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
-        <div className="container mx-auto max-w-6xl">
+        <div className="container mx-auto max-w-4xl">
           <div className="text-center mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-wider mb-4 text-sm sm:text-base">WORK EXPERIENCE</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins mb-4 sm:mb-6 hover:text-gradient transition-all duration-500 ${
+            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Work Experience</p>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
               My Professional Journey
             </h2>
           </div>
-          
-          <div className="space-y-6 sm:space-y-8 scroll-animate opacity-0 translate-y-8">
-            {experiences.map((experience, index) => (
-              <Card 
-                key={experience.id} 
-                className={`w-[95%] mx-auto md:w-full backdrop-blur-sm border transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 animate-fadeInUp ${
-                  isDark 
-                    ? 'bg-white/5 border-white/10 hover:bg-white/10' 
-                    : 'bg-white/90 border-gray-300 hover:bg-white hover:shadow-xl'
-                }`}
-                style={{animationDelay: `${index * 0.2}s`}}
-              >
-                <CardContent className="p-6 sm:p-8">
-                  <div className="grid grid-cols-1 md:grid-cols-4 gap-4 sm:gap-6">
-                    <div className="md:col-span-1">
-                      <div className="flex items-center space-x-2 mb-2">
-                        <Briefcase className="w-4 sm:w-5 h-4 sm:h-5 text-primary" />
-                        <Badge className="bg-primary/20 text-primary border-primary/30 text-xs sm:text-sm">
-                          {experience.duration}
-                        </Badge>
-                      </div>
-                      <div className="flex items-center space-x-2 text-xs sm:text-sm">
-                        <MapPin className="w-3 sm:w-4 h-3 sm:h-4 text-gray-500" />
-                        <span className={isDark ? 'text-white/70' : 'text-gray-700'}>{experience.location}</span>
-                      </div>
+
+          <div className="relative scroll-animate opacity-0 translate-y-8">
+            {/* Dashed vertical line */}
+            <div
+              className="absolute left-[11px] sm:left-[13px] top-3 bottom-3 w-px"
+              style={{
+                backgroundImage: `repeating-linear-gradient(to bottom, ${isDark ? 'rgba(139,92,246,0.5)' : 'rgba(139,92,246,0.35)'} 0px, ${isDark ? 'rgba(139,92,246,0.5)' : 'rgba(139,92,246,0.35)'} 6px, transparent 6px, transparent 14px)`,
+              }}
+            />
+
+            <div className="space-y-0">
+              {experiences.map((experience, index) => (
+                <div
+                  key={experience.id}
+                  className="relative pl-10 sm:pl-12 pb-10 last:pb-0 group animate-fadeInUp"
+                  style={{animationDelay: `${index * 0.15}s`}}
+                >
+                  {/* Diamond node */}
+                  <div className={`absolute left-0 top-1 w-[23px] h-[23px] rotate-45 border-2 z-10 transition-all duration-300 group-hover:scale-110 ${
+                    index === 0
+                      ? isDark
+                        ? 'bg-primary/30 border-primary shadow-lg shadow-primary/40'
+                        : 'bg-primary/20 border-primary shadow-md shadow-primary/30'
+                      : isDark
+                        ? 'bg-[#0a0a0a] border-primary/50 group-hover:border-primary group-hover:bg-primary/15'
+                        : 'bg-white border-primary/40 group-hover:border-primary group-hover:bg-primary/10'
+                  }`} />
+
+                  {/* Content — no hard card border, just a subtle hover zone */}
+                  <div className={`rounded-xl p-4 sm:p-5 transition-all duration-300 group-hover:translate-x-1 ${
+                    index === 0
+                      ? isDark
+                        ? 'bg-primary/6 border-l-2 border-primary/40'
+                        : 'bg-primary/4 border-l-2 border-primary/30'
+                      : isDark
+                        ? 'border-l-2 border-transparent group-hover:border-l-2 group-hover:border-white/10 group-hover:bg-white/3'
+                        : 'border-l-2 border-transparent group-hover:border-gray-200 group-hover:bg-gray-50/60'
+                  }`}>
+                    {/* Date + location row */}
+                    <div className="flex flex-wrap items-center gap-2 mb-2">
+                      <span className={`text-[10px] font-semibold uppercase tracking-wider ${
+                        index === 0 ? 'text-primary' : isDark ? 'text-white/35' : 'text-gray-400'
+                      }`}>
+                        {experience.duration}
+                      </span>
+                      <span className={`w-1 h-1 rounded-full ${isDark ? 'bg-white/20' : 'bg-gray-300'}`} />
+                      <span className={`flex items-center gap-1 text-[10px] ${isDark ? 'text-white/30' : 'text-gray-400'}`}>
+                        <MapPin className="w-2.5 h-2.5" />
+                        {experience.location}
+                      </span>
+                      {index === 0 && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/15 text-green-500 border border-green-500/25 font-semibold">● Live</span>
+                      )}
                     </div>
-                    
-                    <div className="md:col-span-3">
-                      <h3 className={`text-xl sm:text-2xl mb-2 sm:mb-3 group-hover:text-primary transition-all duration-300 ${
+
+                    {/* Role + company */}
+                    <div className="mb-3">
+                      <h3 className={`text-base sm:text-lg font-bold leading-snug group-hover:text-primary transition-colors duration-200 mb-0.5 ${
                         isDark ? 'text-white' : 'text-gray-900'
                       }`}>
                         {experience.position}
                       </h3>
-                      <h4 className={`text-base sm:text-lg mb-3 sm:mb-4 ${
-                        isDark ? 'text-white/80' : 'text-gray-700'
-                      }`}>
+                      <p className={`text-sm font-medium ${isDark ? 'text-primary/70' : 'text-primary'}`}>
                         {experience.company}
-                      </h4>
-                      <p className={`text-sm sm:text-base leading-relaxed mb-3 sm:mb-4 ${
-                        isDark ? 'text-white/70' : 'text-gray-700'
-                      }`}>
-                        {experience.description}
                       </p>
-                      
-                      <div className="flex flex-wrap gap-2">
-                        {experience.technologies.map((tech) => (
-                          <Badge 
-                            key={tech} 
-                            variant="secondary" 
-                            className={`transition-all duration-300 hover:scale-105 text-xs sm:text-sm ${
-                              isDark 
-                                ? 'bg-white/10 text-white border-white/20 hover:bg-primary/20 hover:border-primary/40' 
-                                : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-primary/20 hover:border-primary/40'
-                            }`}
-                          >
-                            {tech}
-                          </Badge>
-                        ))}
-                      </div>
+                    </div>
+
+                    {/* Description */}
+                    <p className={`text-xs sm:text-sm leading-relaxed mb-3 ${
+                      isDark ? 'text-white/55' : 'text-gray-500'
+                    }`}>
+                      {experience.description}
+                    </p>
+
+                    {/* Tech pills */}
+                    <div className="flex flex-wrap gap-1.5">
+                      {experience.technologies.map((tech) => (
+                        <span
+                          key={tech}
+                          className={`text-[11px] px-2.5 py-0.5 rounded-full border font-medium transition-all duration-200 hover:scale-105 ${
+                            isDark
+                              ? 'bg-white/6 text-white/55 border-white/10 hover:bg-primary/15 hover:text-primary hover:border-primary/25'
+                              : 'bg-gray-100 text-gray-500 border-gray-200 hover:bg-primary/8 hover:text-primary hover:border-primary/20'
+                          }`}
+                        >
+                          {tech}
+                        </span>
+                      ))}
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            ))}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </section>
@@ -782,264 +985,359 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8">
-            {/* <p className="text-primary tracking-wider mb-4 text-sm sm:text-base">FEATURED PROJECTS</p> */}
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins mb-4 sm:mb-6 hover:text-gradient transition-all duration-500 ${
+          <div className="text-center mb-10 sm:mb-14 scroll-animate opacity-0 translate-y-8">
+            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Portfolio</p>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-3 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              My Recent Work
+              Recent Work
             </h2>
-            <p className={`max-w-2xl mx-auto text-base sm:text-lg ${
-              isDark ? 'text-white/70' : 'text-gray-700'
+            <p className={`max-w-xl mx-auto text-sm sm:text-base ${
+              isDark ? 'text-white/55' : 'text-gray-500'
             }`}>
-              Here are some of my {showAllProjects ? 'all' : 'featured'} projects that showcase my skills and experience
+              {showAllProjects ? 'All projects' : 'Featured projects'} — spanning full-stack web, ML systems, and developer tools
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8 scroll-animate opacity-0 translate-y-8">
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5 sm:gap-6 scroll-animate opacity-0 translate-y-8">
             {displayProjects.map((project, index) => (
-              <div 
-                key={project.id} 
-                className={`w-[95%] mx-auto md:w-full group relative backdrop-blur-sm border rounded-3xl p-6 sm:p-8 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-primary/20 animate-fadeInUp ${
-                  isDark 
-                    ? 'bg-white/5 border-white/10 hover:bg-white/10' 
-                    : 'bg-white/90 border-gray-300 hover:bg-white hover:shadow-xl'
+              <div
+                key={project.id}
+                className={`group relative flex flex-col rounded-2xl overflow-hidden border transition-all duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:shadow-primary/15 animate-fadeInUp ${
+                  isDark
+                    ? 'bg-white/4 border-white/10 hover:border-primary/35'
+                    : 'bg-white border-gray-200 hover:border-primary/35 shadow-sm'
                 }`}
-                style={{animationDelay: `${index * 0.1}s`}}
+                style={{animationDelay: `${index * 0.07}s`}}
               >
-                <div className="space-y-4 sm:space-y-6">
-                  <div className="flex items-center justify-between">
-                    {project.featured && (
-                      <Badge className="bg-primary/20 text-primary border-primary/30 animate-pulse text-xs sm:text-sm">Featured</Badge>
-                    )}
-                    <div className="flex space-x-2 ml-auto">
-                      <a 
-                        href={project.githubUrl} 
-                        className={`w-8 sm:w-10 h-8 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
-                          isDark ? 'bg-white/10 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/20'
-                        }`} 
-                        target="_blank" 
+                {/* Accent bar — full width on hover */}
+                <div className="h-[3px] w-full bg-gradient-to-r from-primary via-purple-500 to-violet-500 opacity-40 group-hover:opacity-100 transition-opacity duration-300" />
+
+                <div className="flex flex-col flex-1 p-5">
+                  {/* Top row */}
+                  <div className="flex items-center justify-between mb-4">
+                    <span className={`text-[11px] font-mono font-bold tracking-widest ${
+                      isDark ? 'text-white/25' : 'text-gray-300'
+                    }`}>
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div className="flex items-center gap-1.5">
+                      {project.featured && (
+                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-primary/15 text-primary border border-primary/25 font-semibold">Featured</span>
+                      )}
+                      <a
+                        href={project.githubUrl}
+                        className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:text-primary ${
+                          isDark ? 'bg-white/8 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/10'
+                        }`}
+                        target="_blank"
                         rel="noopener noreferrer"
+                        title="Source code"
                       >
-                        <Github className="w-4 sm:w-5 h-4 sm:h-5" />
+                        <Github className="w-3.5 h-3.5" />
                       </a>
                       {project.liveUrl && (
-                        <a 
-                          href={project.liveUrl} 
-                          className={`w-8 sm:w-10 h-8 sm:h-10 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
-                            isDark ? 'bg-white/10 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/20'
-                          }`} 
-                          target="_blank" 
+                        <a
+                          href={project.liveUrl}
+                          className={`w-7 h-7 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-110 hover:text-primary ${
+                            isDark ? 'bg-white/8 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/10'
+                          }`}
+                          target="_blank"
                           rel="noopener noreferrer"
+                          title="Live demo"
                         >
-                          <ExternalLink className="w-4 sm:w-5 h-4 sm:h-5" />
+                          <ExternalLink className="w-3.5 h-3.5" />
                         </a>
                       )}
                     </div>
                   </div>
-                  
-                  <div>
-                    <h3 className={`text-lg sm:text-xl md:text-2xl mb-2 sm:mb-3 group-hover:text-primary transition-all duration-300 ${
+
+                  {/* Title + description */}
+                  <div className="flex-1 mb-4">
+                    <h3 className={`text-sm sm:text-base font-semibold mb-1.5 group-hover:text-primary transition-colors duration-200 leading-snug ${
                       isDark ? 'text-white' : 'text-gray-900'
                     }`}>
                       {project.title}
                     </h3>
-                    <p className={`text-sm sm:text-base leading-relaxed ${
-                      isDark ? 'text-white/70' : 'text-gray-700'
+                    <p className={`text-xs sm:text-sm leading-relaxed ${
+                      isDark ? 'text-white/55' : 'text-gray-500'
                     }`}>
                       {project.description}
                     </p>
                   </div>
-                  
-                  <div className="flex flex-wrap gap-2">
-                    {project.techStack.map((tech, techIndex) => (
-                      <Badge 
-                        key={tech} 
-                        variant="secondary" 
-                        className={`transition-all duration-300 hover:scale-105 text-xs sm:text-sm ${
-                          isDark 
-                            ? 'bg-white/10 text-white border-white/20 hover:bg-primary/20 hover:border-primary/40' 
-                            : 'bg-gray-100 text-gray-700 border-gray-200 hover:bg-primary/20 hover:border-primary/40'
+
+                  {/* Tech stack */}
+                  <div className="flex flex-wrap gap-1.5">
+                    {project.techStack.map((tech) => (
+                      <span
+                        key={tech}
+                        className={`text-[11px] px-2 py-0.5 rounded-full border font-medium transition-all duration-200 hover:scale-105 ${
+                          isDark
+                            ? 'bg-white/6 text-white/60 border-white/12 hover:bg-primary/15 hover:text-primary hover:border-primary/25'
+                            : 'bg-gray-50 text-gray-500 border-gray-200 hover:bg-primary/8 hover:text-primary hover:border-primary/20'
                         }`}
-                        style={{animationDelay: `${techIndex * 0.05}s`}}
                       >
                         {tech}
-                      </Badge>
+                      </span>
                     ))}
                   </div>
                 </div>
               </div>
             ))}
           </div>
-          
-          <div className="text-center mt-8 sm:mt-12 scroll-animate opacity-0 translate-y-8">
-  {/* Toggle Projects Button */}
-  <Button 
-    variant="outline" 
-    className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 group ${
-      isDark 
-        ? 'border-primary text-primary hover:bg-primary-600 hover:text-white' 
-        : 'border-primary text-primary hover:bg-primary-600 hover:text-white'
-    }`}
-    onClick={() => setShowAllProjects(!showAllProjects)}
-  >
-    <Eye className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-bounce" />
-    {showAllProjects ? 'Show Featured Only' : 'View All Projects'}
-  </Button>
 
-  {/* GitHub Redirect Button */}
-  <a 
-    href="https://github.com/RAJESH2961?tab=repositories" 
-    target="_blank" 
-    rel="noopener noreferrer"
-    className="inline-block mt-4"
-  >
-    <Button
-      variant="outline"
-      className={`w-full sm:w-auto px-6 sm:px-8 py-3 rounded-full hover:scale-105 transition-all duration-300 group ${
-        isDark 
-          ? 'border-primary text-primary hover:bg-primary-600 hover:text-white' 
-          : 'border-primary text-primary hover:bg-primary-600 hover:text-white'
-      }`}
-    >
-      <Eye className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:animate-bounce" />
-      See Everything I’ve Built
-    </Button>
-  </a>
-</div>
-
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-10 sm:mt-12 scroll-animate opacity-0 translate-y-8">
+            <Button
+              variant="outline"
+              className={`w-full sm:w-auto px-6 py-2.5 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300 group ${
+                isDark
+                  ? 'border-primary/40 text-primary hover:bg-primary/10'
+                  : 'border-primary/50 text-primary hover:bg-primary/8'
+              }`}
+              onClick={() => setShowAllProjects(!showAllProjects)}
+            >
+              <Eye className="w-4 h-4 mr-2 group-hover:animate-bounce" />
+              {showAllProjects ? 'Show Featured Only' : 'View All Projects'}
+            </Button>
+            <a
+              href="https://github.com/RAJESH2961?tab=repositories"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                variant="outline"
+                className={`w-full sm:w-auto px-6 py-2.5 rounded-full text-sm font-medium hover:scale-105 transition-all duration-300 group ${
+                  isDark
+                    ? 'border-white/15 text-white/60 hover:border-white/30 hover:text-white hover:bg-white/6'
+                    : 'border-gray-300 text-gray-600 hover:border-gray-400 hover:text-gray-800'
+                }`}
+              >
+                <Github className="w-4 h-4 mr-2" />
+                All Repos on GitHub
+              </Button>
+            </a>
+          </div>
         </div>
       </section>
 
-      {/* Contact Section with improved form inputs and mobile layout */}
-      <section id="contact" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
-        <div className="container mx-auto max-w-4xl">
+      {/* Contact Section */}
+      <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
+        <div className="container mx-auto max-w-5xl">
+
+          {/* Header */}
           <div className="text-center mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-wider mb-4 text-sm sm:text-base">GET IN TOUCH</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins mb-4 sm:mb-6 hover:text-gradient transition-all duration-500 ${
+            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Get In Touch</p>
+            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-4 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
               Let's Work Together
             </h2>
-            <p className={`max-w-2xl mx-auto text-base sm:text-lg ${
-              isDark ? 'text-white/70' : 'text-gray-700'
+            <p className={`max-w-lg mx-auto text-sm sm:text-base ${
+              isDark ? 'text-white/55' : 'text-gray-500'
             }`}>
-              Ready to bring your ideas to life? Let's discuss your project and create something amazing together.
+              Have a project in mind, a role to fill, or just want to connect? I'm always open to the right conversation.
             </p>
           </div>
-          
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-12 scroll-animate opacity-0 translate-y-8">
-            <div className="space-y-6 sm:space-y-8">
-              <div className="space-y-4 sm:space-y-6">
-                <div className="flex items-center space-x-4 hover:scale-105 transition-all duration-300 group">
-                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300">
-                    <Mail className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
-                  </div>
-                  <div>
-                    {/* <div className={`text-base sm:text-lg ${isDark ? 'text-white' : 'text-gray-900'}`}>Email</div> */}
-                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='mailto:grajesh2906@gmail.com' target="_blank">Email me</a></div>
-                  </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 sm:gap-10 scroll-animate opacity-0 translate-y-8">
+
+            {/* Left panel — 2 cols */}
+            <div className="lg:col-span-2 flex flex-col gap-5">
+
+              {/* Availability card */}
+              <div className={`rounded-2xl border p-5 ${
+                isDark ? 'bg-green-500/8 border-green-500/20' : 'bg-green-50 border-green-200'
+              }`}>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                  <span className={`text-xs font-semibold uppercase tracking-widest ${
+                    isDark ? 'text-green-400' : 'text-green-600'
+                  }`}>Available Now</span>
                 </div>
-                
-                <div className="flex items-center space-x-4 hover:scale-105 transition-all duration-300 group">
-                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300">
-                    <Github className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
-                  </div>
-                  <div>
-                    {/* <div className={`text-base sm:text-lg ${isDark ? 'text-white' : 'text-gray-900'}`}>GitHub</div> */}
-                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='https://github.com/RAJESH2961' target="_blank">Github</a></div>
-                  </div>
+                <p className={`text-sm leading-relaxed ${isDark ? 'text-white/70' : 'text-gray-600'}`}>
+                  Open to <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>full-time roles</span>, <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>internships</span>, and <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>freelance projects</span>.
+                </p>
+                <p className={`text-xs mt-2 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>
+                  ⚡ Typically responds within 24 hours
+                </p>
+              </div>
+
+              {/* What I can help with */}
+              <div className={`rounded-2xl border p-5 ${
+                isDark ? 'bg-white/4 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              }`}>
+                <p className={`text-xs uppercase tracking-widest font-semibold mb-3 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>I Can Help With</p>
+                <div className="space-y-2">
+                  {[
+                    "Full Stack Web Development",
+                    "REST API Design & Integration",
+                    "ML Model Integration",
+                    "Cloud Deployment (AWS/Docker)",
+                    "Code Review & Consultation",
+                  ].map((item) => (
+                    <div key={item} className="flex items-center gap-2">
+                      <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
+                      <span className={`text-sm ${isDark ? 'text-white/65' : 'text-gray-600'}`}>{item}</span>
+                    </div>
+                  ))}
                 </div>
-                
-                <div className="flex items-center space-x-4 hover:scale-105 transition-all duration-300 group">
-                  <div className="w-10 sm:w-12 h-10 sm:h-12 bg-primary/20 rounded-full flex items-center justify-center group-hover:bg-primary/30 transition-all duration-300">
-                    <Linkedin className="w-5 sm:w-6 h-5 sm:h-6 text-primary" />
-                  </div>
-                  <div>
-                    {/* <div className={`text-base sm:text-lg ${isDark ? 'text-white' : 'text-gray-900'}`}>LinkedIn</div> */}
-                    <div className={`text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}><a href='https://www.linkedin.com/in/rajesh2906/' target="_blank">LinkedIn</a></div>
-                  </div>
+              </div>
+
+              {/* Social links */}
+              <div className={`rounded-2xl border p-5 ${
+                isDark ? 'bg-white/4 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              }`}>
+                <p className={`text-xs uppercase tracking-widest font-semibold mb-3 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>Find Me On</p>
+                <div className="space-y-2.5">
+                  {[
+                    { icon: <Mail className="w-4 h-4" />, label: "grajesh2906@gmail.com", href: "mailto:grajesh2906@gmail.com", display: "Email" },
+                    { icon: <Linkedin className="w-4 h-4" />, label: "linkedin.com/in/rajesh2906", href: "https://www.linkedin.com/in/rajesh2906/", display: "LinkedIn" },
+                    { icon: <Github className="w-4 h-4" />, label: "github.com/RAJESH2961", href: "https://github.com/RAJESH2961", display: "GitHub" },
+                  ].map((link) => (
+                    <a
+                      key={link.display}
+                      href={link.href}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex items-center gap-3 group transition-all duration-200 hover:text-primary`}
+                    >
+                      <span className={`p-2 rounded-lg transition-all duration-200 group-hover:bg-primary/15 group-hover:text-primary ${
+                        isDark ? 'bg-white/8 text-white/50' : 'bg-gray-100 text-gray-500'
+                      }`}>{link.icon}</span>
+                      <div>
+                        <p className={`text-xs font-semibold group-hover:text-primary transition-colors ${isDark ? 'text-white/80' : 'text-gray-700'}`}>{link.display}</p>
+                        <p className={`text-[11px] ${isDark ? 'text-white/35' : 'text-gray-400'}`}>{link.label}</p>
+                      </div>
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
-            
-            {/* Improved form with better input styling and mobile responsiveness */}
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className={`w-[95%] mx-auto lg:w-full p-6 sm:p-8 space-y-6 rounded-3xl transition-all duration-500 ${
-                isDark 
-                  ? 'glass-card hover:shadow-2xl hover:shadow-primary/10' 
-                  : 'bg-white/90 backdrop-blur-sm border border-gray-300 hover:shadow-xl'
+
+            {/* Right — form, 3 cols */}
+            <form onSubmit={handleSubmit} className="lg:col-span-3">
+              <div className={`relative h-full rounded-2xl overflow-hidden transition-all duration-300 ${
+                isDark
+                  ? 'border border-white/10 hover:border-primary/30'
+                  : 'border border-gray-200 shadow-md hover:shadow-xl hover:shadow-primary/8'
               }`}>
-                <div>
-                  <label htmlFor="name" className={`block text-sm font-medium mb-2 ${
-                    isDark ? 'text-white' : 'text-gray-900'
-                  }`}>Name</label>
-                  <Input
-                    id="name"
-                    placeholder="Your name"
-                    value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
-                    className={`w-full rounded-xl focus:border-primary focus:ring-primary transition-all duration-300 ${
-                      isDark 
-                        ? 'bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:bg-white/15' 
-                        : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary'
-                    }`}
-                    required
-                  />
+                {/* Gradient top accent */}
+                <div className="h-1 w-full bg-gradient-to-r from-violet-500 via-primary to-cyan-500" />
+
+                <div className={`p-6 sm:p-8 space-y-5 ${
+                  isDark ? 'bg-white/4' : 'bg-white'
+                }`}>
+                  {/* Form heading */}
+                  <div className="mb-1">
+                    <h3 className={`text-base font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Drop me a message</h3>
+                    <p className={`text-xs mt-0.5 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>I read every message and reply personally.</p>
+                  </div>
+
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="space-y-1.5">
+                      <label htmlFor="name" className={`block text-xs font-semibold uppercase tracking-wider ${
+                        isDark ? 'text-white/45' : 'text-gray-400'
+                      }`}>Your Name</label>
+                      <Input
+                        id="name"
+                        placeholder="John Doe"
+                        value={formData.name}
+                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        className={`w-full rounded-xl text-sm h-11 transition-all duration-200 ${
+                          isDark
+                            ? 'bg-white/6 border-white/12 text-white placeholder:text-white/25 focus:border-primary/70 focus:bg-white/10 hover:border-white/20'
+                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-primary hover:border-gray-300'
+                        }`}
+                        required
+                      />
+                    </div>
+                    <div className="space-y-1.5">
+                      <label htmlFor="email" className={`block text-xs font-semibold uppercase tracking-wider ${
+                        isDark ? 'text-white/45' : 'text-gray-400'
+                      }`}>Email Address</label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="you@company.com"
+                        value={formData.email}
+                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        className={`w-full rounded-xl text-sm h-11 transition-all duration-200 ${
+                          isDark
+                            ? 'bg-white/6 border-white/12 text-white placeholder:text-white/25 focus:border-primary/70 focus:bg-white/10 hover:border-white/20'
+                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-primary hover:border-gray-300'
+                        }`}
+                        required
+                      />
+                    </div>
+                  </div>
+
+                  <div className="space-y-1.5">
+                    <label htmlFor="message" className={`block text-xs font-semibold uppercase tracking-wider ${
+                      isDark ? 'text-white/45' : 'text-gray-400'
+                    }`}>Message</label>
+                    <Textarea
+                      id="message"
+                      placeholder="Tell me about your project, role, or idea — the more detail, the better."
+                      value={formData.message}
+                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      className={`w-full min-h-[150px] resize-none rounded-xl text-sm transition-all duration-200 ${
+                        isDark
+                          ? 'bg-white/6 border-white/12 text-white placeholder:text-white/25 focus:border-primary/70 focus:bg-white/10 hover:border-white/20'
+                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-primary hover:border-gray-300'
+                      }`}
+                      required
+                    />
+                  </div>
+
+                  <Button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="w-full h-12 rounded-xl text-sm font-semibold group transition-all duration-300 hover:scale-[1.015] bg-gradient-to-r from-primary via-violet-500 to-primary bg-size-200 hover:bg-right shadow-lg shadow-primary/25 text-white border-0"
+                  >
+                    {isSubmitting ? (
+                      <span className="flex items-center justify-center gap-2">
+                        <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                        Sending...
+                      </span>
+                    ) : (
+                      <span className="flex items-center justify-center gap-2">
+                        <Send className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                        Send Message
+                      </span>
+                    )}
+                  </Button>
+
+                  <div className={`flex items-center justify-center gap-4 pt-1 ${
+                    isDark ? 'text-white/25' : 'text-gray-300'
+                  }`}>
+                    <div className="h-px flex-1 bg-current opacity-40" />
+                    <p className="text-[11px] font-medium">or reach out directly</p>
+                    <div className="h-px flex-1 bg-current opacity-40" />
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row gap-2">
+                    <a
+                      href="mailto:grajesh2906@gmail.com"
+                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border transition-all duration-200 hover:scale-[1.02] hover:border-primary/50 hover:text-primary ${
+                        isDark ? 'bg-white/4 border-white/10 text-white/60' : 'bg-gray-50 border-gray-200 text-gray-600'
+                      }`}
+                    >
+                      <Mail className="w-3.5 h-3.5" />
+                      grajesh2906@gmail.com
+                    </a>
+                    <a
+                      href="https://www.linkedin.com/in/rajesh2906/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border transition-all duration-200 hover:scale-[1.02] hover:border-primary/50 hover:text-primary ${
+                        isDark ? 'bg-white/4 border-white/10 text-white/60' : 'bg-gray-50 border-gray-200 text-gray-600'
+                      }`}
+                    >
+                      <Linkedin className="w-3.5 h-3.5" />
+                      Connect on LinkedIn
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="email" className={`block text-sm font-medium mb-2 ${
-                    isDark ? 'text-white' : 'text-gray-900'
-                  }`}>Email</label>
-                  <Input
-                    id="email"
-                    type="email"
-                    placeholder="yourname@webgenius.io"
-                    value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
-                    className={`w-full rounded-xl focus:border-primary focus:ring-primary transition-all duration-300 ${
-                      isDark 
-                        ? 'bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:bg-white/15' 
-                        : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary'
-                    }`}
-                    required
-                  />
-                </div>
-                <div>
-                  <label htmlFor="message" className={`block text-sm font-medium mb-2 ${
-                    isDark ? 'text-white' : 'text-gray-900'
-                  }`}>Message</label>
-                  <Textarea
-                    id="message"
-                    placeholder="Tell me about your stuff..."
-                    value={formData.message}
-                    onChange={(e) => setFormData({...formData, message: e.target.value})}
-                    className={`w-full min-h-[120px] resize-none rounded-xl focus:border-primary focus:ring-primary transition-all duration-300 ${
-                      isDark 
-                        ? 'bg-white/10 border-white/20 text-white placeholder:text-white/50 focus:bg-white/15' 
-                        : 'bg-white border-gray-300 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary'
-                    }`}
-                    required
-                  />
-                </div>
-                <Button 
-                  type="submit" 
-                  disabled={isSubmitting}
-                  className={`w-full py-3 sm:py-4 rounded-xl text-base sm:text-lg group hover:scale-105 transition-all duration-300 ${
-                    isDark
-                      ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-                      : 'bg-primary hover:bg-primary-600 text-black hover:text-white'
-                  }`}
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send className="w-4 sm:w-5 h-4 sm:h-5 mr-2 group-hover:translate-x-1 transition-transform" />
-                      Send Message
-                    </>
-                  )}
-                </Button>
               </div>
             </form>
           </div>

@@ -8,8 +8,8 @@ A modern **software developer portfolio** built with React + TypeScript. It show
 
 - Live site: _(add your URL)_  
 - Resume: `public/Rajesh_FullStack_Developer.pdf`
-- GitHub: `https://github.com/RAJESH2961`
-- LinkedIn: `https://www.linkedin.com/in/rajesh2906/`
+- GitHub: `https://github.com/Rajesh2961`
+- LinkedIn: `https://www.linkedin.com/in/Rajesh2906/`
 
 ## Tech Stack
 

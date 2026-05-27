@@ -14,4 +14,4 @@ User-agent: *
 Allow: /
 
 # Sitemap location - replace with your actual domain
-Sitemap: https://https://rajesh2906.netlify.app//sitemap.xml
+Sitemap: https://https://Rajesh2906.netlify.app//sitemap.xml

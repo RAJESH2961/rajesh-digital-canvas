@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Github, Linkedin, Mail, ExternalLink, Send, Download, Menu, X, Eye, Code, Database, Wrench, Briefcase, MapPin } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Send, Download, Menu, X, Eye, Code, Database, Wrench, Briefcase, MapPin, Sparkles } from 'lucide-react';
 import { useToast } from "@/hooks/use-toast";
 import ModernThreeBackground from "@/components/ModernThreeBackground";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/contexts/ThemeContext";
 import { useLocation } from "react-router-dom";
 
-const TYPEWRITER_WORDS = ["FULL STACK WEB DEVELOPER", "ML ENTHUSIAST"] as const;
+const TYPEWRITER_WORDS = ["GenAI Full Stack Engineer", "AI/ML Applications", "Scalable Backend Systems"] as const;
 const PATH_TO_SECTION: Record<string, string> = {
   "/about": "about",
   "/projects": "projects",
@@ -30,52 +31,47 @@ const Index = () => {
   const [showAllProjects, setShowAllProjects] = useState(false);
   const { toast } = useToast();
 
-  // Experience data
+    // Experience data
   const experiences = [
     {
       id: 1,
-      company: "Webvoid technologies pvt ltd",
-      position: "Full stack Developer",
-      duration: "November 2025 - present",
-      location: "Hybrid Chittoor,AP",
-      // description: "Designed and implemented secure RESTful APIs with Django REST Framework and JWT, optimized database queries using ORM and raw SQL, integrated third-party APIs, ensured data validation and serialization, performed API testing with Postman, managed code with Git, and collaborated in Agile teams.",
-      description : "Full-stack engineer with hands-on experience designing, developing, and deploying production systems using React, FastAPI, and PostgreSQL. Specialized in REST API architecture, query optimization, and performance tuning for scalable backend services. Experienced with Dockerized microservices, CI/CD automation, and AWS cloud infrastructure for secure, highly available deployments. Strong contributor in Agile teams, participating in system design, code reviews, and production releases",
-      technologies: ["ReactJs", "FastAPI", "Typescript","Postman", "AWS", "CI/CD", "Docker", "PostgreSQL"]
+      company: "Webvoid Technologies Pvt Ltd",
+      position: "Full Stack Engineer",
+      duration: "November 2025 – Present",
+      location: "Hybrid · Chittoor, AP",
+      description: "Architecting and deploying production systems serving real users. Built scalable REST APIs with FastAPI and PostgreSQL, optimized database performance for high-throughput workloads. Implemented containerized microservices with Docker, automated CI/CD pipelines, and deployed to AWS infrastructure. Lead code reviews, system design discussions, and production releases in an Agile environment.",
+      technologies: ["React", "FastAPI", "TypeScript", "PostgreSQL", "Docker", "AWS", "CI/CD"]
     },
     {
       id: 2,
       company: "Digital Hercules Innovations",
-      position: "Django Developer",
-      duration: "March 2025 - June 2025",
-      location: "Online UttarPradesh",
-      // description: "Designed and implemented secure RESTful APIs with Django REST Framework and JWT, optimized database queries using ORM and raw SQL, integrated third-party APIs, ensured data validation and serialization, performed API testing with Postman, managed code with Git, and collaborated in Agile teams.",
-      description : "Integrated Amazon Ads API to efficiently fetch and store advertising data using Django models. - Developed robust RESTful APIs with Django REST Framework, enhancing frontend-backend communication. - Implemented JWT-based authentication for secure API access, ensuring data protection.",
-      technologies: ["Django", "DjangoRestFramework", "Postman", "API testing"]
+      position: "Backend Engineer",
+      duration: "March 2025 – June 2025",
+      location: "Remote · Uttar Pradesh",
+      description: "Engineered backend systems for advertising analytics platform. Integrated Amazon Ads API for real-time data ingestion, designed high-performance Django REST APIs, and implemented JWT-based authentication with role-based access control. Optimized database queries and established API testing protocols.",
+      technologies: ["Django", "DRF", "PostgreSQL", "JWT", "REST APIs"]
     },
     {
       id: 3,
       company: "Try Zen Tech IT Solutions",
-      position: "Web Developer",
-      duration: "Dec 2023 - may2024",
-      location: "Tirupathi,AP",
-      description: "Developed and maintained multiple Landing pages using modern web technologies. Collaborated with cross-functional teams to deliver high-quality software solutions.",
-      technologies: ["HTML", "CSS", "JavaScript", "JQuery"]
+      position: "Software Developer",
+      duration: "December 2023 – May 2024",
+      location: "Tirupati, AP",
+      description: "Delivered production-ready landing pages and client-facing web applications. Collaborated with design and product teams to translate requirements into functional interfaces. Focused on responsive design, cross-browser compatibility, and performance optimization.",
+      technologies: ["React", "JavaScript", "Tailwind CSS", "REST APIs"]
     },
   ];
 
   // Skills data organized by categories
   const skillsData = {
     frontend: [
-      "React", "JavaScript", "HTML5", "CSS3", 
-      "Tailwind CSS","Bootstrap", "SASS", "Redux", "Next.js", "Responsive Design","Framer Motion", 'Three.js'
+      "React", "TypeScript", "Next.js", "Tailwind CSS", "Redux"
     ],
     backend: [
-      "Python", "Django", "FastAPI", "SQL", "MongoDB", 
-       "REST APIs", "Authentication", "Api Development"
+      "Python", "Django", "FastAPI", "PostgreSQL", "MongoDB", "Redis", "REST API Design"
     ],
     other: [
-      "Postman", "Git", "Machine Learning", 
-      "Agile", "Project Management", "Team Leadership"
+      "Docker", "AWS", "CI/CD", "Git", "Postman", "System Design"
     ]
   };
 
@@ -169,94 +165,90 @@ const Index = () => {
   };
 
  const allProjects = [
-{
-  "id": 7,
-  "title": "Alumni Portal",
-  "description": "A Django-based alumni networking platform that enables students, alumni, and faculty to connect, share events, and stay engaged with the university community.",
-  "techStack": ["Django Rest Framework", "React.js", "SQLite3", "Twilio","Axios","ShadeCN"],
-  "githubUrl": "https://github.com/RAJESH2961/ALUMNI-CONNECT",
-  liveUrl: "https://youtu.be/vBkLXHvJkcg?si=8eke339CY72uCUBd",
-  "featured": true
-},
-
   {
-    id: 1,
-    title: "Stock Prediction Portal",
-    description: "Real-time stock prediction using machine learning with interactive frontend.",
-    techStack: ["React", "Django", "MachineLearning", "Postman", "SQL", "JWT Authentication", "Three.js"],
-    githubUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
-    liveUrl: "https://github.com/RAJESH2961/stock-prediction-portal.git",
+    id: 7,
+    title: "Alumni Connect",
+    description: "Full-stack alumni networking platform connecting students, alumni, and faculty. Features real-time messaging via Twilio, event management, and role-based access control.",
+    techStack: ["Django REST Framework", "React", "PostgreSQL", "Twilio", "JWT"],
+    githubUrl: "https://github.com/Rajesh2961/ALUMNI-CONNECT",
+    liveUrl: "https://youtu.be/vBkLXHvJkcg?si=8eke339CY72uCUBd",
     featured: true
   },
   {
-    id: 2,
-    title: "Assignment Logo Paper Generator",
-    description: "Generates assignment papers with custom logos using Flask backend.",
-    techStack: ["Python", "Flask"],
-    githubUrl: "https://github.com/RAJESH2961/assignment-logo.git",
-    liveUrl: "https://assignment-paper-generator.onrender.com/",
+    id: 1,
+    title: "Stock Prediction Portal",
+    description: "ML-powered stock analysis platform with real-time data visualization. Integrated machine learning models for price prediction with a React frontend and Django backend architecture.",
+    techStack: ["React", "Django", "Python", "Machine Learning", "PostgreSQL", "JWT"],
+    githubUrl: "https://github.com/Rajesh2961/stock-prediction-portal.git",
+    liveUrl: "https://github.com/Rajesh2961/stock-prediction-portal.git",
+    featured: true
+  },
+  {
+    id: 4,
+    title: "Multi-Disease Prediction System",
+    description: "AI-powered healthcare diagnostic tool predicting diabetes, heart disease, and Parkinson's. Features data preprocessing pipelines, trained ML models, and an intuitive Flask-based web interface.",
+    techStack: ["Python", "Flask", "Scikit-learn", "Pandas", "Machine Learning"],
+    githubUrl: "https://github.com/Rajesh2961/multi_disease_pred.git",
+    liveUrl: "https://multi-disease-pred.onrender.com/",
     featured: true
   },
   {
     id: 3,
     title: "E-Commerce Platform",
-    description: "Responsive online shopping platform with cart, admin login Sentimental Analysis for comment section",
-    techStack: ["Django","Sentimental Analysis","HTML5", "Bootstrap", "CSS3", "Responsive web design", "MySql"],
-    githubUrl: "https://github.com/RAJESH2961/E-commerce.git",
-    // liveUrl: "https://demo.com",
+    description: "Full-featured online marketplace with sentiment analysis on product reviews. Includes shopping cart, admin dashboard, user authentication, and MySQL database integration.",
+    techStack: ["Django", "Sentiment Analysis", "MySQL", "Bootstrap", "JavaScript"],
+    githubUrl: "https://github.com/Rajesh2961/E-commerce.git",
     featured: true
   },
   {
-    id: 4,
-    title: "Multi disease Prediction",
-    description: "An AI-powered system for predicting diseases like heart disease, diabetes based on user health data inputs.",
-    techStack: ["Python", "Flask", "EDA", "MachineLearning"],
-    githubUrl: "https://github.com/RAJESH2961/multi_disease_pred.git",
-    liveUrl: "https://multi-disease-pred.onrender.com/",
-    featured: true
-  },
-  {
-    id: 5,
-    title: "Diploma percentage calculator",
-    description: "A web application to calculate the final percentage for diploma students with intuitive input.",
-    techStack: ["HTML5", "CSS3", "JavaScript", "Bootstrap5"],
-    githubUrl: "https://github.com/RAJESH2961/Diploma_Percentage_calculator",
-    liveUrl: "https://apdiplomamarks.netlify.app/",
-    featured: true
+    id: 2,
+    title: "Assignment Paper Generator",
+    description: "Automated document generation tool creating formatted assignment papers with institutional branding. Built with Flask and deployed on Render for instant accessibility.",
+    techStack: ["Python", "Flask", "HTML", "CSS"],
+    githubUrl: "https://github.com/Rajesh2961/assignment-logo.git",
+    liveUrl: "https://assignment-paper-generator.onrender.com/",
+    featured: false
   },
   {
     id: 6,
-    title: "QR-code Generator tool",
-    description: "Generates QR codes instantly using a React-powered interface.",
-    techStack: ["React.js", "API"],
-    githubUrl: "https://github.com/RAJESH2961/ReactPractice/tree/main/QrCode-Generator",
+    title: "QR Code Generator",
+    description: "Lightweight React utility for generating custom QR codes. Clean UI with instant generation and download capabilities.",
+    techStack: ["React", "JavaScript", "API Integration"],
+    githubUrl: "https://github.com/Rajesh2961/ReactPractice/tree/main/QrCode-Generator",
     liveUrl: "https://rad-bavarois-59a97a.netlify.app/",
-
-    featured: true
+    featured: false
   },
-
+  {
+    id: 5,
+    title: "Academic Calculator",
+    description: "Specialized calculator for diploma students computing weighted percentages across multiple subjects. Responsive design with client-side validation.",
+    techStack: ["JavaScript", "HTML", "CSS", "Bootstrap"],
+    githubUrl: "https://github.com/Rajesh2961/Diploma_Percentage_calculator",
+    liveUrl: "https://apdiplomamarks.netlify.app/",
+    featured: false
+  },
   {
     id: 8,
-    title: "Git gather",
-    description: "Git gather is a web application that allows users to easily organize, manage, and join meetups",
-    techStack: ["React.js","Tailwind CSS"],
-    githubUrl: "https://github.com/RAJESH2961/GitGather.git",
+    title: "GitGather",
+    description: "Event management platform for organizing and discovering tech meetups. Features responsive UI and community features.",
+    techStack: ["React", "Tailwind CSS", "JavaScript"],
+    githubUrl: "https://github.com/Rajesh2961/GitGather.git",
     featured: false
   },
   {
     id: 9,
-    title: "Recipe Sharing",
-    description: "A platform for users to share, like, and discover recipes.",
-    techStack: ["react.js", "Redux API"],
-    githubUrl: "https://github.com/RAJESH2961/Recipe-sharing.git",
+    title: "Recipe Hub",
+    description: "Recipe sharing platform with Redux state management. Users can create, save, and rate recipes with a responsive interface.",
+    techStack: ["React", "Redux", "JavaScript"],
+    githubUrl: "https://github.com/Rajesh2961/Recipe-sharing.git",
     featured: false
   },
   {
     id: 10,
-    title: "Burger Zesty Food-Ordering",
-    description: "Online Food ordering system with real-time menu and cart.",
-    techStack: ["React.js","Redux API"],
-    githubUrl: "https://github.com/RAJESH2961/Burgster-Zesty-Food-Ordering.git",
+    title: "Food Ordering App",
+    description: "Real-time food ordering interface with menu management and cart functionality. Redux-powered state management for seamless UX.",
+    techStack: ["React", "Redux", "JavaScript"],
+    githubUrl: "https://github.com/Rajesh2961/Burgster-Zesty-Food-Ordering.git",
     featured: false
   }
 ];
@@ -280,8 +272,8 @@ const Index = () => {
 
     if (response.ok) {
       toast({
-        title: "Message Sent Successfully! 🎉",
-        description: "Thank you for reaching out. I'll get back to you soon!",
+        title: "Message Sent",
+        description: "Thank you for your inquiry. I will respond within 24 hours.",
       });
       setFormData({ name: '', email: '', message: '' });
     } else {
@@ -291,8 +283,8 @@ const Index = () => {
   } catch (error) {
     console.error('Form submission error:', error);
     toast({
-      title: "Error sending message",
-      description: "Please try again later or contact me directly.",
+      title: "Unable to Send",
+      description: "Please email me directly at grajesh2906@gmail.com",
       variant: "destructive",
     });
   } finally {
@@ -317,76 +309,47 @@ const Index = () => {
       }`}>
         <div className="container mx-auto px-4 sm:px-6 py-4">
           <div className="flex justify-between items-center">
-            <div className="text-xl sm:text-2xl font-inter">
-              <span className={isDark ? 'text-white' : 'text-gray-900'}></span>
-              <span className="text-primary"></span>
-            </div>
+            {/* Logo */}
+            <a 
+              href="#home" 
+              onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+              className="text-xl sm:text-2xl font-bold font-poppins tracking-tight group"
+            >
+              <span className={`${isDark ? 'text-white' : 'text-gray-900'} group-hover:text-primary transition-colors`}>RG</span>
+              <span className="text-primary">.</span>
+            </a>
             
-            {/* Desktop Navigation with improved hover states */}
-            <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
-              <button 
-                onClick={() => scrollToSection('home')} 
-                className={`transition-all duration-300 hover:scale-105 font-medium px-3 py-2 rounded-lg ${
-                  isDark 
-                    ? 'text-white/80 hover:text-white hover:bg-white/10' 
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                Home
-              </button>
-              <button 
-                onClick={() => scrollToSection('about')} 
-                className={`transition-all duration-300 hover:scale-105 font-medium px-3 py-2 rounded-lg ${
-                  isDark 
-                    ? 'text-white/80 hover:text-white hover:bg-white/10' 
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                About
-              </button>
-              <button 
-                onClick={() => scrollToSection('experience')} 
-                className={`transition-all duration-300 hover:scale-105 font-medium px-3 py-2 rounded-lg ${
-                  isDark 
-                    ? 'text-white/80 hover:text-white hover:bg-white/10' 
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                Experience
-              </button>
-              <button 
-                onClick={() => scrollToSection('projects')} 
-                className={`transition-all duration-300 hover:scale-105 font-medium px-3 py-2 rounded-lg ${
-                  isDark 
-                    ? 'text-white/80 hover:text-white hover:bg-white/10' 
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                Projects
-              </button>
-              <button 
-                onClick={() => scrollToSection('contact')} 
-                className={`transition-all duration-300 hover:scale-105 font-medium px-3 py-2 rounded-lg ${
-                  isDark 
-                    ? 'text-white/80 hover:text-white hover:bg-white/10' 
-                    : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
-                }`}
-              >
-                Contact
-              </button>
+            {/* Desktop Navigation - Enhanced */}
+            <div className="hidden md:flex items-center space-x-1">
+              {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => (
+                <button
+                  key={item}
+                  onClick={() => scrollToSection(item.toLowerCase())}
+                  className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
+                    isDark
+                      ? 'text-white/70 hover:text-white hover:bg-white/10'
+                      : 'text-gray-600 hover:text-gray-900 hover:bg-gray-100'
+                  }`}
+                >
+                  {item}
+                  <span className={`absolute bottom-1 left-1/2 -translate-x-1/2 w-0 h-0.5 rounded-full transition-all duration-300 group-hover:w-4 ${
+                    isDark ? 'bg-primary' : 'bg-primary'
+                  }`} />
+                </button>
+              ))}
             </div>
             
             <div className="flex items-center space-x-3 sm:space-x-4">
               <ThemeToggle />
               <Button 
-                className={`hidden md:flex px-4 lg:px-6 py-2 rounded-full hover:scale-105 transition-all duration-300 font-medium ${
+                className={`hidden md:flex px-5 py-2.5 rounded-full text-sm font-semibold transition-all  hover:scale-105 ${
                   isDark
-                    ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-                    : 'bg-primary hover:bg-primary-600 text-black hover:text-white'
+                    ? 'bg-gradient-to-r from-primaryshadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]'
+                    : 'bg-gradient-to-r from-primary shadow-lg shadow-primary/20'
                 }`}
                 onClick={() => scrollToSection('contact')}
               >
-                Let's Talk
+                Hire Me
               </Button>
               
               {/* Mobile menu button */}
@@ -401,71 +364,34 @@ const Index = () => {
             </div>
           </div>
           
-          {/* Mobile Navigation with full width and improved styling */}
+          {/* Mobile Navigation - Enhanced */}
           {mobileMenuOpen && (
             <div className={`md:hidden mt-4 pb-4 border-t animate-fadeInUp ${
               isDark ? 'border-white/10' : 'border-gray-200'
             }`}>
               <div className="flex flex-col space-y-1 pt-4">
-                <button 
-                  onClick={() => scrollToSection('home')} 
-                  className={`text-left px-4 py-3 rounded-lg smooth-hover transition-all duration-200 font-medium w-full gpu-accelerated ${
-                    isDark 
-                      ? 'text-white hover:bg-white/10' 
-                      : 'text-gray-900 hover:bg-gray-100'
-                  }`}
-                >
-                  Home
-                </button>
-                <button 
-                  onClick={() => scrollToSection('about')} 
-                  className={`text-left px-4 py-3 rounded-lg hover:scale-105 transition-all duration-300 font-medium w-full ${
-                    isDark 
-                      ? 'text-white hover:bg-white/10' 
-                      : 'text-gray-900 hover:bg-gray-100'
-                  }`}
-                >
-                  About
-                </button>
-                <button 
-                  onClick={() => scrollToSection('experience')} 
-                  className={`text-left px-4 py-3 rounded-lg hover:scale-105 transition-all duration-300 font-medium w-full ${
-                    isDark 
-                      ? 'text-white hover:bg-white/10' 
-                      : 'text-gray-900 hover:bg-gray-100'
-                  }`}
-                >
-                  Experience
-                </button>
-                <button 
-                  onClick={() => scrollToSection('projects')} 
-                  className={`text-left px-4 py-3 rounded-lg hover:scale-105 transition-all duration-300 font-medium w-full ${
-                    isDark 
-                      ? 'text-white hover:bg-white/10' 
-                      : 'text-gray-900 hover:bg-gray-100'
-                  }`}
-                >
-                  Projects
-                </button>
-                <button 
-                  onClick={() => scrollToSection('contact')} 
-                  className={`text-left px-4 py-3 rounded-lg hover:scale-105 transition-all duration-300 font-medium w-full ${
-                    isDark 
-                      ? 'text-white hover:bg-white/10' 
-                      : 'text-gray-900 hover:bg-gray-100'
-                  }`}
-                >
-                  Contact
-                </button>
+                {['Home', 'About', 'Experience', 'Projects', 'Contact'].map((item) => (
+                  <button
+                    key={item}
+                    onClick={() => scrollToSection(item.toLowerCase())}
+                    className={`text-left px-4 py-3 rounded-lg transition-all duration-200 font-medium w-full ${
+                      isDark
+                        ? 'text-white/80 hover:text-white hover:bg-white/10'
+                        : 'text-gray-700 hover:text-gray-900 hover:bg-gray-100'
+                    }`}
+                  >
+                    {item}
+                  </button>
+                ))}
                 <Button 
-                  className={`mt-4 w-full py-3 rounded-lg transition-all duration-300 font-medium ${
+                  className={`mt-4 w-full py-3 rounded-full text-sm font-semibold transition-all  ${
                     isDark
-                      ? 'bg-primary hover:bg-primary-600 text-white hover:text-white'
-                      : 'bg-primary hover:bg-primary-600 text-white hover:text-white'
+                      ? 'bg-gradient-to-r from-primary to-purple-600'
+                      : 'bg-gradient-to-r from-primary to-purple-600'
                   }`}
                   onClick={() => scrollToSection('contact')}
                 >
-                  Let's Talk
+                  Hire Me
                 </Button>
               </div>
             </div>
@@ -473,170 +399,201 @@ const Index = () => {
         </div>
       </nav>
 
-      {/* Hero Section */}
-      <section id="home" className="min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 pt-20 relative z-10">
+      {/* Hero Section - Compact GenAI Focus */}
+      <section id="home" className="min-h-[85vh] flex flex-col items-center justify-center px-4 sm:px-6 pt-16 relative z-10">
         <div className="container mx-auto max-w-4xl text-center">
-          <div className="space-y-6 sm:space-y-7 animate-fadeInUp">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="space-y-5"
+          >
+            {/* GenAI Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className={`inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium backdrop-blur-md ${
+                isDark
+                  ? 'bg-gradient-to-r from-violet-500/15 to-purple-500/15 border-violet-500/40 text-violet-300'
+                  : 'bg-gradient-to-r from-violet-50 to-purple-50 border-violet-200 text-violet-700'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 mr-2" />
+              <span className="font-semibold">GenAI Full Stack Engineer</span>
+            </motion.div>
+            {/* GenAI Badge */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.1, duration: 0.4 }}
+              className={`inline-flex items-center px-4 py-2 rounded-full border text-sm font-medium backdrop-blur-md ${
+                isDark
+                  ? 'bg-gradient-to-r from-violet-500/15 to-purple-500/15 border-violet-500/40 text-violet-300'
+                  : 'bg-gradient-to-r from-violet-50 to-purple-50 border-violet-200 text-violet-700'
+              }`}
+            >
+              <Sparkles className="w-4 h-4 mr-2" />
+              <span className="font-semibold">Open for new roles</span>
+            </motion.div>
 
-            {/* Availability badge */}
-            <div className={`inline-flex items-center px-4 py-2 rounded-full border text-sm backdrop-blur-sm transition-all duration-200 animate-float gpu-accelerated ${
-              isDark
-                ? 'bg-white/5 border-white/10 text-white/80 hover:bg-white/10'
-                : 'bg-white/70 border-gray-300 text-gray-800 hover:bg-white/90 shadow-lg'
-            }`}>
-              <span className="w-2 h-2 bg-green-400 rounded-full mr-2.5 animate-pulse"></span>
-              Open to full-time &amp; freelance opportunities
-            </div>
-
-            {/* Name + role */}
-            <div className="space-y-3">
-              <p className="text-primary tracking-widest text-xs sm:text-sm uppercase font-semibold animate-fadeInUp" style={{animationDelay: '0.2s'}}>
-                Full Stack Developer · ML Enthusiast
-              </p>
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-poppins leading-none font-bold animate-fadeInUp" style={{animationDelay: '0.3s'}}>
-                <span className={`block ${isDark ? 'text-white' : 'text-gray-900'}`}>Rajesh</span>
-                <span className="block text-primary">Gangadharam</span>
-              </h1>
-              <div className="text-base sm:text-lg md:text-xl font-light animate-fadeInUp gpu-accelerated h-7" style={{animationDelay: '0.5s'}}>
-                <span className="text-gradient-blue gpu-accelerated">{typedText}</span>
-                <span className="animate-pulse text-primary gpu-accelerated">|</span>
+            {/* Name - Compact */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className="space-y-2"
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-poppins leading-[1.1] font-bold tracking-tight">
+                <span className={`${isDark ? 'text-white' : 'text-gray-900'}`}>Rajesh </span>
+                <span className="bg-gradient-to-r from-primary via-purple-500 to-violet-500 bg-clip-text">Gangadharam</span>
+              </h2>
+              
+              {/* Typewriter Role */}
+              <div className="h-7 flex items-center justify-center gap-1 text-base sm:text-lg">
+                <span className={`${isDark ? 'text-white/70' : 'text-gray-600'}`}>Building</span>
+                <span className="font-semibold text-primary">{typedText}</span>
+                <motion.span 
+                  animate={{ opacity: [1, 0] }}
+                  transition={{ repeat: Infinity, duration: 0.8 }}
+                  className="text-primary"
+                >
+                  |
+                </motion.span>
               </div>
-            </div>
+            </motion.div>
 
-            {/* Value proposition */}
-            <p className={`text-sm sm:text-base md:text-lg max-w-xl mx-auto leading-relaxed animate-fadeInUp px-2 ${
-              isDark ? 'text-white/65' : 'text-gray-600'
-            }`} style={{animationDelay: '0.65s'}}>
-              I build <span className="text-primary font-medium">production-grade</span> web apps — from REST APIs to interactive UIs — and ship them to cloud. Currently at{' '}
-              <span className={`font-medium ${isDark ? 'text-white/90' : 'text-gray-800'}`}>Webvoid Technologies</span>.
-            </p>
+            {/* Value Prop - Shorter */}
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4, duration: 0.5 }}
+              className={`text-sm sm:text-base max-w-xl mx-auto leading-relaxed ${
+                isDark ? 'text-white/60' : 'text-gray-600'
+              }`}
+            >
+              <span className="font-semibold text-primary">2+ years</span> shipping production systems with 
+              <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}> Python, FastAPI, React & AI/ML</span>.
+              Currently at Webvoid Technologies.
+            </motion.p>
 
-            {/* Key tech pills */}
-            <div className="flex flex-wrap justify-center gap-2 animate-fadeInUp" style={{animationDelay: '0.75s'}}>
-              {["React", "FastAPI", "Django", "TypeScript", "PostgreSQL", "Docker", "AWS"].map((tech) => (
-                <span
+            {/* Tech Stack - Compact Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.5, duration: 0.4 }}
+              className="flex flex-wrap justify-center gap-2"
+            >
+              {["Python", "FastAPI", "Django", "React", "TypeScript", "PostgreSQL", "Docker", "AWS", "LLMs"].map((tech) => (
+                <motion.span
                   key={tech}
-                  className={`text-xs px-3 py-1 rounded-full border font-medium transition-all duration-200 hover:scale-105 hover:border-primary/60 hover:text-primary ${
+                  whileHover={{ scale: 1.05 }}
+                  className={`text-xs px-3 py-1.5 rounded-full font-medium transition-colors ${
                     isDark
-                      ? 'bg-white/5 border-white/15 text-white/70'
-                      : 'bg-gray-50 border-gray-200 text-gray-600'
+                      ? 'bg-white/10 text-white/80 border border-white/15 hover:border-primary/40 hover:text-primary'
+                      : 'bg-gray-100 text-gray-700 border border-gray-200 hover:border-primary/40 hover:text-primary'
                   }`}
                 >
                   {tech}
-                </span>
+                </motion.span>
               ))}
-            </div>
+            </motion.div>
 
-            {/* CTA buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center items-center animate-fadeInUp" style={{animationDelay: '0.9s'}}>
+            {/* CTAs + Socials - Combined Row */}
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.6, duration: 0.4 }}
+              className="flex flex-col sm:flex-row gap-3 justify-center items-center pt-2"
+            >
               <a
                 href="/Rajesh_FullStack_Developer.pdf"
-                target="_blank"
                 download
-                className={`w-full sm:w-auto inline-flex items-center justify-center px-7 py-3 rounded-full text-sm sm:text-base font-semibold group hover:scale-105 transition-all duration-300 shadow-lg shadow-primary/20 ${
+                className={`inline-flex items-center px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 ${
                   isDark
-                    ? 'bg-primary hover:bg-primary-600 text-white'
-                    : 'bg-primary hover:bg-primary-600 text-white'
+                    ? 'bg-gradient-to-r from-primary to-purple-600shadow-[0_0_20px_rgba(139,92,246,0.4)] hover:shadow-[0_0_30px_rgba(139,92,246,0.6)]'
+                    : 'bg-gradient-to-r from-primary to-purple-600 shadow-lg shadow-primary/30 hover:shadow-xl hover:shadow-primary/50 ring-2 ring-primary/20'
                 }`}
               >
-                <Download className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-                Download Resume
+                <Download className="w-4 h-4 mr-2" />
+                Resume
               </a>
-              <Button
-                variant="outline"
-                className={`w-full sm:w-auto px-7 py-3 rounded-full text-sm sm:text-base font-semibold hover:scale-105 transition-all duration-300 ${
-                  isDark
-                    ? 'border-white/20 text-white hover:bg-white/10 hover:border-white/30'
-                    : 'border-gray-400 text-gray-800 hover:bg-gray-50 hover:border-gray-500'
-                }`}
-                onClick={() => scrollToSection('contact')}
-              >
-                Let's Talk
-              </Button>
-            </div>
+              
+              <div className="flex items-center gap-2">
+                {[
+                  { icon: Github, href: "https://github.com/Rajesh2961" },
+                  { icon: Linkedin, href: "https://www.linkedin.com/in/Rajesh2906/" },
+                  { icon: Mail, href: "mailto:grajesh2906@gmail.com" },
+                ].map((social) => (
+                  <a
+                    key={social.href}
+                    href={social.href}
+                    className={`flex items-center justify-center w-10 h-10 rounded-lg transition-all duration-300 hover:scale-110 ${
+                      isDark
+                        ? 'bg-white/10 text-white/70 hover:bg-primary/20 hover:text-primary'
+                        : 'bg-gray-100 text-gray-600 hover:bg-primary/10 hover:text-primary'
+                    }`}
+                  >
+                    <social.icon className="w-4 h-4" />
+                  </a>
+                ))}
+              </div>
+            </motion.div>
 
-            {/* Social links */}
-            <div className="flex items-center justify-center gap-4 animate-fadeInUp" style={{animationDelay: '1.05s'}}>
-              <a
-                href="https://github.com/RAJESH2961"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-1.5 text-xs sm:text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 ${
-                  isDark ? 'text-white/50' : 'text-gray-500'
-                }`}
-              >
-                <Github className="w-4 h-4" />
-                GitHub
-              </a>
-              <span className={`w-px h-4 ${isDark ? 'bg-white/20' : 'bg-gray-300'}`} />
-              <a
-                href="https://www.linkedin.com/in/rajesh2906/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`flex items-center gap-1.5 text-xs sm:text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 ${
-                  isDark ? 'text-white/50' : 'text-gray-500'
-                }`}
-              >
-                <Linkedin className="w-4 h-4" />
-                LinkedIn
-              </a>
-              <span className={`w-px h-4 ${isDark ? 'bg-white/20' : 'bg-gray-300'}`} />
-              <a
-                href="mailto:grajesh2906@gmail.com"
-                className={`flex items-center gap-1.5 text-xs sm:text-sm font-medium transition-all duration-200 hover:text-primary hover:scale-105 ${
-                  isDark ? 'text-white/50' : 'text-gray-500'
-                }`}
-              >
-                <Mail className="w-4 h-4" />
-                Email
-              </a>
-            </div>
-
-            {/* Quick stats */}
-            <div className={`inline-flex items-center gap-6 sm:gap-10 px-6 sm:px-10 py-3 sm:py-4 rounded-2xl border backdrop-blur-sm animate-fadeInUp ${
-              isDark ? 'bg-white/5 border-white/10' : 'bg-white/80 border-gray-200 shadow-sm'
-            }`} style={{animationDelay: '1.15s'}}>
+            {/* Stats - Minimal */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.7, duration: 0.4 }}
+              className="flex justify-center gap-6 sm:gap-10 pt-3"
+            >
               {[
-                { value: "2+", label: "Years Exp" },
+                { value: "2+", label: "Years" },
                 { value: "10+", label: "Projects" },
                 { value: "3", label: "Companies" },
-              ].map((stat, i) => (
+              ].map((stat) => (
                 <div key={stat.label} className="text-center">
                   <div className={`text-xl sm:text-2xl font-bold font-poppins ${isDark ? 'text-white' : 'text-gray-900'}`}>{stat.value}</div>
-                  <div className={`text-[10px] sm:text-xs tracking-wide ${isDark ? 'text-white/50' : 'text-gray-500'}`}>{stat.label}</div>
+                  <div className={`text-[10px] uppercase tracking-wider ${isDark ? 'text-white/50' : 'text-gray-500'}`}>{stat.label}</div>
                 </div>
               ))}
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
 
-        {/* Scroll nudge */}
-        <button
+        {/* Scroll Indicator */}
+        <motion.button
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1, duration: 0.4 }}
           onClick={() => scrollToSection('about')}
-          className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 group transition-all duration-300 hover:scale-110 ${
-            isDark ? 'text-white/30 hover:text-white/60' : 'text-gray-400 hover:text-gray-600'
+          className={`absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1 group ${
+            isDark ? 'text-white/40 hover:text-primary' : 'text-gray-400 hover:text-primary'
           }`}
-          aria-label="Scroll to about"
         >
-          <span className="text-[10px] tracking-widest uppercase">Explore</span>
-          <div className={`w-5 h-8 rounded-full border flex items-start justify-center pt-1.5 ${
-            isDark ? 'border-white/20' : 'border-gray-300'
-          }`}>
-            <div className={`w-1 h-2 rounded-full animate-bounce ${isDark ? 'bg-white/50' : 'bg-gray-400'}`} />
-          </div>
-        </button>
+          <motion.div
+            animate={{ y: [0, 6, 0] }}
+            transition={{ repeat: Infinity, duration: 1.5 }}
+            className={`w-5 h-8 rounded-full border-2 flex justify-center pt-1 ${
+              isDark ? 'border-white/30' : 'border-gray-300'
+            }`}
+          >
+            <div className={`w-1 h-2 rounded-full ${isDark ? 'bg-white/60' : 'bg-gray-400'}`} />
+          </motion.div>
+        </motion.button>
       </section>
 
       {/* About Section */}
       <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-12 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-wider mb-3 text-xs sm:text-sm uppercase font-semibold">About Me</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold ${
+          <div className="text-center mb-16 scroll-animate opacity-0 translate-y-8">
+            <p className="text-primary tracking-[0.2em] mb-4 text-xs sm:text-sm uppercase font-semibold">About Me</p>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-poppins font-bold tracking-tight ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Who I Am
+              Engineer Profile
             </h2>
+            <div className={`w-20 h-1 mx-auto mt-6 rounded-full ${isDark ? 'bg-primary/50' : 'bg-primary/30'}`} />
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-start">
@@ -647,13 +604,11 @@ const Index = () => {
               <p className={`text-base sm:text-lg leading-relaxed ${
                 isDark ? 'text-white/75' : 'text-gray-600'
               }`}>
-                I'm a <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Final Year B.Tech CSE student</span> at{' '}
+                Full-stack engineer with <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>2+ years of production experience</span> designing and deploying scalable systems. Specialized in Python backend development with FastAPI and Django, with proven expertise in REST API architecture, database optimization, and cloud infrastructure. Currently completing B.Tech CSE at{' '}
                 <a href="https://apollouniversity.edu.in/" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline underline-offset-2">
                   The Apollo University
                 </a>
-                , with a strong foundation built through a{' '}
-                <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>Diploma in Computer Science Engineering</span>.
-                I bridge academic depth with real-world industry experience — already working as a full-stack engineer while finishing my degree.
+                {' '}while shipping production code at Webvoid Technologies.
               </p>
 
               {/* Education path */}
@@ -722,7 +677,7 @@ const Index = () => {
 
               {/* Unique differentiators */}
               <div>
-                <p className={`text-xs uppercase tracking-widest font-semibold mb-4 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>Why Hire Me</p>
+                <p className={`text-xs uppercase tracking-[0.2em] font-semibold mb-5 ${isDark ? 'text-white/50' : 'text-gray-500'}`}>Why Hire Me</p>
                 <div className="space-y-3">
                   {[
                     {
@@ -782,25 +737,20 @@ const Index = () => {
 
             {/* Right — image */}
             <div className="relative scroll-animate opacity-0 translate-y-8 lg:sticky lg:top-28">
-              <div className={`w-full max-w-sm sm:max-w-md mx-auto aspect-square rounded-full backdrop-blur-sm border flex items-center justify-center animate-float smooth-hover transition-all duration-300 gpu-accelerated ${
+              <div className={`w-full max-w-sm sm:max-w-md mx-auto aspect-square rounded-full backdrop-blur-md border-2 flex items-center justify-center animate-float smooth-hover transition-all duration-300 gpu-accelerated ${
                 isDark
-                  ? 'bg-gradient-to-br from-primary/20 to-accent/20 border-white/10'
-                  : 'bg-gradient-to-br from-primary/10 to-accent/10 border-gray-300 shadow-xl'
+                  ? 'bg-gradient-to-br from-primary/30 via-purple-500/20 to-accent/20 border-white/20 shadow-[0_0_60px_rgba(139,92,246,0.2)]'
+                  : 'bg-gradient-to-br from-primary/20 via-purple-500/15 to-accent/10 border-gray-300 shadow-xl'
               }`}>
                 <img
                   src="/image_copy.png"
                   alt="Rajesh Gangadharam"
-                  className="w-full h-full object-cover rounded-full ring-2 ring-purple-600"
+                  className="w-full h-full object-cover rounded-full ring-2 ring-primary/50"
                 />
               </div>
 
               {/* Floating badge — current status */}
-              <div className={`absolute bottom-4 left-1/2 -translate-x-1/2 whitespace-nowrap flex items-center gap-2 px-4 py-2 rounded-full border text-xs font-medium backdrop-blur-sm shadow-lg ${
-                isDark ? 'bg-black/70 border-white/10 text-white/80' : 'bg-white/90 border-gray-200 text-gray-700 shadow-md'
-              }`}>
-                <span className="w-1.5 h-1.5 bg-green-400 rounded-full animate-pulse" />
-                Final Year · Currently Employed
-              </div>
+
             </div>
           </div>
         </div>
@@ -809,13 +759,14 @@ const Index = () => {
       {/* Skills Section */}
       <section className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
         <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-10 sm:mb-14 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Technical Skills</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold ${
+          <div className="text-center mb-16 scroll-animate opacity-0 translate-y-8">
+            <p className="text-primary tracking-[0.2em] mb-4 text-xs sm:text-sm uppercase font-semibold">Technical Stack</p>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-poppins font-bold tracking-tight ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Technologies I Work With
+              Core Technologies
             </h2>
+            <div className={`w-20 h-1 mx-auto mt-6 rounded-full ${isDark ? 'bg-primary/50' : 'bg-primary/30'}`} />
           </div>
 
           <div className={`rounded-2xl border divide-y scroll-animate opacity-0 translate-y-8 ${
@@ -874,110 +825,296 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Experience Section — Vertical Timeline */}
-      <section id="experience" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
-        <div className="container mx-auto max-w-4xl">
-          <div className="text-center mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Work Experience</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold ${
+      {/* Experience Section — Premium Animated Journey Timeline */}
+      <section id="experience" className="py-20 sm:py-28 px-4 sm:px-6 relative z-10 overflow-hidden">
+        {/* Background gradient accents */}
+        <div className="absolute inset-0 overflow-hidden pointer-events-none">
+          <div className={`absolute top-1/4 left-0 w-96 h-96 rounded-full blur-[120px] ${isDark ? 'bg-primary/5' : 'bg-primary/8'}`} />
+          <div className={`absolute bottom-1/4 right-0 w-80 h-80 rounded-full blur-[100px] ${isDark ? 'bg-purple-500/5' : 'bg-purple-500/8'}`} />
+        </div>
+
+        <div className="container mx-auto max-w-5xl relative">
+          {/* Section Header with animated underline */}
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.6 }}
+            className="text-center mb-20"
+          >
+            <motion.div
+              initial={{ scale: 0.8, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.5 }}
+              className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider mb-6 ${
+                isDark 
+                  ? 'bg-primary/10 border border-primary/30 text-primary' 
+                  : 'bg-primary/8 border border-primary/20 text-primary'
+              }`}
+            >
+              <Briefcase className="w-4 h-4" />
+              Career Journey
+            </motion.div>
+            
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-poppins font-bold tracking-tight mb-4 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              My Professional Journey
+              Professional <span className="text-gradient">Experience</span>
             </h2>
-          </div>
-
-          <div className="relative scroll-animate opacity-0 translate-y-8">
-            {/* Dashed vertical line */}
-            <div
-              className="absolute left-[11px] sm:left-[13px] top-3 bottom-3 w-px"
-              style={{
-                backgroundImage: `repeating-linear-gradient(to bottom, ${isDark ? 'rgba(139,92,246,0.5)' : 'rgba(139,92,246,0.35)'} 0px, ${isDark ? 'rgba(139,92,246,0.5)' : 'rgba(139,92,246,0.35)'} 6px, transparent 6px, transparent 14px)`,
-              }}
+            
+            <motion.div 
+              initial={{ scaleX: 0 }}
+              whileInView={{ scaleX: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4, duration: 0.8 }}
+              className={`w-32 h-1 mx-auto rounded-full bg-gradient-to-r from-primary via-purple-500 to-violet-500`}
             />
+            
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.5 }}
+              className={`mt-6 text-sm sm:text-base max-w-lg mx-auto ${isDark ? 'text-white/60' : 'text-gray-500'}`}
+            >
+              A timeline of growth — from foundational learning to building production systems
+            </motion.p>
+          </motion.div>
 
-            <div className="space-y-0">
+          {/* Journey Timeline */}
+          <div className="relative">
+            {/* Animated central glowing line */}
+            <div className="absolute left-6 sm:left-8 top-0 bottom-0 w-1">
+              {/* Background track */}
+              <div className={`absolute inset-0 rounded-full ${isDark ? 'bg-white/10' : 'bg-gray-200'}`} />
+              {/* Animated gradient fill - flows from top to bottom */}
+              <motion.div 
+                initial={{ scaleY: 0 }}
+                whileInView={{ scaleY: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 1.5, ease: "easeOut" }}
+                className="absolute top-0 left-0 right-0 origin-top rounded-full bg-gradient-to-b from-primary via-purple-500 to-violet-500"
+                style={{ height: '100%' }}
+              />
+              {/* Glowing effect */}
+              <div className="absolute inset-0 rounded-full bg-gradient-to-b from-primary via-purple-500 to-violet-500 blur-sm opacity-60" />
+            </div>
+
+            {/* Journey Steps */}
+            <div className="space-y-8 sm:space-y-12">
               {experiences.map((experience, index) => (
-                <div
+                <motion.div
                   key={experience.id}
-                  className="relative pl-10 sm:pl-12 pb-10 last:pb-0 group animate-fadeInUp"
-                  style={{animationDelay: `${index * 0.15}s`}}
+                  initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true, margin: "-50px" }}
+                  transition={{ 
+                    duration: 0.6, 
+                    delay: index * 0.2,
+                    ease: [0.25, 0.46, 0.45, 0.94]
+                  }}
+                  className="relative pl-16 sm:pl-20"
                 >
-                  {/* Diamond node */}
-                  <div className={`absolute left-0 top-1 w-[23px] h-[23px] rotate-45 border-2 z-10 transition-all duration-300 group-hover:scale-110 ${
-                    index === 0
-                      ? isDark
-                        ? 'bg-primary/30 border-primary shadow-lg shadow-primary/40'
-                        : 'bg-primary/20 border-primary shadow-md shadow-primary/30'
-                      : isDark
-                        ? 'bg-[#0a0a0a] border-primary/50 group-hover:border-primary group-hover:bg-primary/15'
-                        : 'bg-white border-primary/40 group-hover:border-primary group-hover:bg-primary/10'
-                  }`} />
+                  {/* Timeline Node */}
+                  <motion.div 
+                    initial={{ scale: 0, rotate: -180 }}
+                    whileInView={{ scale: 1, rotate: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ 
+                      delay: index * 0.2 + 0.3, 
+                      duration: 0.5,
+                      type: "spring",
+                      stiffness: 200
+                    }}
+                    className={`absolute left-0 top-2 w-12 h-12 sm:w-14 sm:h-14 rounded-2xl flex items-center justify-center z-10 ${
+                      index === 0
+                        ? isDark 
+                          ? 'bg-gradient-to-br from-primary to-purple-600 shadow-lg shadow-primary/50' 
+                          : 'bg-gradient-to-br from-primary to-purple-600 shadow-lg shadow-primary/40'
+                        : isDark
+                          ? 'bg-[#0a0a0a] border-2 border-white/20'
+                          : 'bg-white border-2 border-gray-200'
+                    }`}
+                  >
+                    {index === 0 ? (
+                      <motion.div
+                        animate={{ scale: [1, 1.2, 1] }}
+                        transition={{ repeat: Infinity, duration: 2 }}
+                      >
+                        <Sparkles className={`w-5 h-5 sm:w-6 sm:h-6 ${isDark ? 'text-white' : 'text-white'}`} />
+                      </motion.div>
+                    ) : (
+                      <span className={`text-sm sm:text-base font-bold ${isDark ? 'text-white/60' : 'text-gray-400'}`}>
+                        {experiences.length - index}
+                      </span>
+                    )}
+                    
+                    {/* Pulse ring for current position */}
+                    {index === 0 && (
+                      <motion.div
+                        className={`absolute inset-0 rounded-2xl ${isDark ? 'bg-primary' : 'bg-primary'}`}
+                        animate={{ 
+                          scale: [1, 1.5, 1],
+                          opacity: [0.5, 0, 0.5]
+                        }}
+                        transition={{ 
+                          repeat: Infinity, 
+                          duration: 2,
+                          ease: "easeInOut"
+                        }}
+                      />
+                    )}
+                  </motion.div>
 
-                  {/* Content — no hard card border, just a subtle hover zone */}
-                  <div className={`rounded-xl p-4 sm:p-5 transition-all duration-300 group-hover:translate-x-1 ${
-                    index === 0
-                      ? isDark
-                        ? 'bg-primary/6 border-l-2 border-primary/40'
-                        : 'bg-primary/4 border-l-2 border-primary/30'
-                      : isDark
-                        ? 'border-l-2 border-transparent group-hover:border-l-2 group-hover:border-white/10 group-hover:bg-white/3'
-                        : 'border-l-2 border-transparent group-hover:border-gray-200 group-hover:bg-gray-50/60'
-                  }`}>
-                    {/* Date + location row */}
-                    <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className={`text-[10px] font-semibold uppercase tracking-wider ${
-                        index === 0 ? 'text-primary' : isDark ? 'text-white/35' : 'text-gray-400'
+                  {/* Experience Card - Glassmorphism */}
+                  <motion.div
+                    whileHover={{ 
+                      y: -5,
+                      transition: { duration: 0.2 }
+                    }}
+                    className={`relative rounded-2xl p-5 sm:p-6 transition-all duration-300 ${
+                      index === 0
+                        ? isDark
+                          ? 'bg-gradient-to-br from-primary/15 via-white/5 to-transparent border border-primary/30 shadow-xl shadow-primary/10'
+                          : 'bg-gradient-to-br from-primary/10 via-white to-white border border-primary/20 shadow-xl shadow-primary/10'
+                        : isDark
+                          ? 'bg-white/5 border border-white/10 hover:border-primary/30 hover:bg-white/8 backdrop-blur-sm'
+                          : 'bg-white/80 border border-gray-200 hover:border-primary/30 hover:shadow-lg backdrop-blur-sm'
+                    }`}
+                  >
+                    {/* Current badge */}
+                    {index === 0 && (
+                      <motion.div
+                        initial={{ opacity: 0, scale: 0.8 }}
+                        whileInView={{ opacity: 1, scale: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.5 }}
+                        className={`absolute -top-3 right-4 px-3 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider flex items-center gap-1.5 ${
+                          isDark 
+                            ? 'bg-green-500/20 text-green-400 border border-green-500/30' 
+                            : 'bg-green-100 text-green-600 border border-green-200'
+                        }`}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse" />
+                        Currently Here
+                      </motion.div>
+                    )}
+
+                    {/* Date & Location */}
+                    <div className="flex flex-wrap items-center gap-3 mb-3">
+                      <div className={`flex items-center gap-1.5 text-xs font-semibold ${
+                        index === 0 ? 'text-primary' : isDark ? 'text-white/50' : 'text-gray-500'
                       }`}>
+                        <div className={`w-1.5 h-1.5 rounded-full ${index === 0 ? 'bg-primary' : isDark ? 'bg-white/40' : 'bg-gray-400'}`} />
                         {experience.duration}
-                      </span>
-                      <span className={`w-1 h-1 rounded-full ${isDark ? 'bg-white/20' : 'bg-gray-300'}`} />
-                      <span className={`flex items-center gap-1 text-[10px] ${isDark ? 'text-white/30' : 'text-gray-400'}`}>
-                        <MapPin className="w-2.5 h-2.5" />
+                      </div>
+                      <span className={`w-px h-3 ${isDark ? 'bg-white/20' : 'bg-gray-300'}`} />
+                      <div className={`flex items-center gap-1 text-xs ${isDark ? 'text-white/40' : 'text-gray-400'}`}>
+                        <MapPin className="w-3 h-3" />
                         {experience.location}
-                      </span>
-                      {index === 0 && (
-                        <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/15 text-green-500 border border-green-500/25 font-semibold">● Live</span>
-                      )}
+                      </div>
                     </div>
 
-                    {/* Role + company */}
-                    <div className="mb-3">
-                      <h3 className={`text-base sm:text-lg font-bold leading-snug group-hover:text-primary transition-colors duration-200 mb-0.5 ${
-                        isDark ? 'text-white' : 'text-gray-900'
-                      }`}>
+                    {/* Role & Company */}
+                    <div className="mb-4">
+                      <motion.h3 
+                        className={`text-lg sm:text-xl font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}
+                      >
                         {experience.position}
-                      </h3>
-                      <p className={`text-sm font-medium ${isDark ? 'text-primary/70' : 'text-primary'}`}>
+                      </motion.h3>
+                      <p className={`text-sm font-medium flex items-center gap-2 ${
+                        index === 0 
+                          ? 'text-primary' 
+                          : isDark ? 'text-primary/70' : 'text-primary'
+                      }`}>
+                        <span className={`w-2 h-2 rounded-full ${index === 0 ? 'bg-primary' : 'bg-primary/60'}`} />
                         {experience.company}
                       </p>
                     </div>
 
                     {/* Description */}
-                    <p className={`text-xs sm:text-sm leading-relaxed mb-3 ${
-                      isDark ? 'text-white/55' : 'text-gray-500'
-                    }`}>
+                    <p className={`text-sm leading-relaxed mb-4 ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
                       {experience.description}
                     </p>
 
-                    {/* Tech pills */}
-                    <div className="flex flex-wrap gap-1.5">
-                      {experience.technologies.map((tech) => (
-                        <span
+                    {/* Tech Stack with stagger animation */}
+                    <div className="flex flex-wrap gap-2">
+                      {experience.technologies.map((tech, techIndex) => (
+                        <motion.span
                           key={tech}
-                          className={`text-[11px] px-2.5 py-0.5 rounded-full border font-medium transition-all duration-200 hover:scale-105 ${
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: index * 0.2 + techIndex * 0.05 + 0.4 }}
+                          whileHover={{ 
+                            scale: 1.1,
+                            transition: { duration: 0.15 }
+                          }}
+                          className={`text-[11px] px-3 py-1.5 rounded-full font-medium border cursor-default ${
                             isDark
-                              ? 'bg-white/6 text-white/55 border-white/10 hover:bg-primary/15 hover:text-primary hover:border-primary/25'
-                              : 'bg-gray-100 text-gray-500 border-gray-200 hover:bg-primary/8 hover:text-primary hover:border-primary/20'
+                              ? 'bg-white/8 text-white/70 border-white/15 hover:bg-primary/20 hover:text-primary hover:border-primary/40'
+                              : 'bg-gray-100 text-gray-600 border-gray-200 hover:bg-primary/15 hover:text-primary hover:border-primary/30'
                           }`}
                         >
                           {tech}
-                        </span>
+                        </motion.span>
                       ))}
                     </div>
-                  </div>
-                </div>
+
+                    {/* Journey connector line for next item */}
+                    {index < experiences.length - 1 && (
+                      <motion.div
+                        initial={{ scaleY: 0 }}
+                        whileInView={{ scaleY: 1 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.6, duration: 0.4 }}
+                        className={`absolute -bottom-8 left-6 sm:left-8 w-px h-8 origin-top ${
+                          isDark ? 'bg-gradient-to-b from-primary/50 to-transparent' : 'bg-gradient-to-b from-primary/30 to-transparent'
+                        }`}
+                      />
+                    )}
+                  </motion.div>
+                </motion.div>
               ))}
             </div>
+
+            {/* Journey Summary Stats */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.8, duration: 0.6 }}
+              className={`mt-16 grid grid-cols-3 gap-4 sm:gap-6 ${
+                isDark 
+                  ? 'bg-gradient-to-r from-white/5 via-white/3 to-white/5' 
+                  : 'bg-gradient-to-r from-gray-50 via-white to-gray-50'
+              } rounded-2xl p-6 sm:p-8 border ${isDark ? 'border-white/10' : 'border-gray-200'}`}
+            >
+              {[
+                { value: "2+", label: "Years Active", icon: "⏱️" },
+                { value: "3", label: "Companies", icon: "🏢" },
+                { value: "10+", label: "Technologies", icon: "⚡" },
+              ].map((stat, idx) => (
+                <motion.div
+                  key={stat.label}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.9 + idx * 0.1 }}
+                  whileHover={{ scale: 1.05 }}
+                  className="text-center"
+                >
+                  <div className="text-2xl sm:text-3xl mb-1">{stat.icon}</div>
+                  <div className={`text-2xl sm:text-3xl font-bold font-poppins ${isDark ? 'text-white' : 'text-gray-900'}`}>
+                    {stat.value}
+                  </div>
+                  <div className={`text-xs sm:text-sm ${isDark ? 'text-white/50' : 'text-gray-500'}`}>
+                    {stat.label}
+                  </div>
+                </motion.div>
+              ))}
+            </motion.div>
           </div>
         </div>
       </section>
@@ -985,17 +1122,18 @@ const Index = () => {
       {/* Projects Section */}
       <section id="projects" className="py-16 sm:py-20 px-4 sm:px-6 relative z-10">
         <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-10 sm:mb-14 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Portfolio</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-3 ${
+          <div className="text-center mb-16 scroll-animate opacity-0 translate-y-8">
+            <p className="text-primary tracking-[0.2em] mb-4 text-xs sm:text-sm uppercase font-semibold">Selected Work</p>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-poppins font-bold tracking-tight mb-4 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Recent Work
+              Projects
             </h2>
+            <div className={`w-20 h-1 mx-auto mb-6 rounded-full ${isDark ? 'bg-primary/50' : 'bg-primary/30'}`} />
             <p className={`max-w-xl mx-auto text-sm sm:text-base ${
-              isDark ? 'text-white/55' : 'text-gray-500'
+              isDark ? 'text-white/60' : 'text-gray-500'
             }`}>
-              {showAllProjects ? 'All projects' : 'Featured projects'} — spanning full-stack web, ML systems, and developer tools
+              {showAllProjects ? 'Complete project portfolio' : 'Featured work'} — full-stack applications, ML integrations, and production systems
             </p>
           </div>
 
@@ -1097,10 +1235,10 @@ const Index = () => {
               onClick={() => setShowAllProjects(!showAllProjects)}
             >
               <Eye className="w-4 h-4 mr-2 group-hover:animate-bounce" />
-              {showAllProjects ? 'Show Featured Only' : 'View All Projects'}
+              {showAllProjects ? 'Show Featured' : 'View All Projects'}
             </Button>
             <a
-              href="https://github.com/RAJESH2961?tab=repositories"
+              href="https://github.com/Rajesh2961?tab=repositories"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -1113,7 +1251,7 @@ const Index = () => {
                 }`}
               >
                 <Github className="w-4 h-4 mr-2" />
-                All Repos on GitHub
+                View GitHub Profile
               </Button>
             </a>
           </div>
@@ -1125,17 +1263,18 @@ const Index = () => {
         <div className="container mx-auto max-w-5xl">
 
           {/* Header */}
-          <div className="text-center mb-12 sm:mb-16 scroll-animate opacity-0 translate-y-8">
-            <p className="text-primary tracking-widest mb-3 text-xs sm:text-sm uppercase font-semibold">Get In Touch</p>
-            <h2 className={`text-3xl sm:text-4xl md:text-5xl font-poppins font-bold mb-4 ${
+          <div className="text-center mb-16 scroll-animate opacity-0 translate-y-8">
+            <p className="text-primary tracking-[0.2em] mb-4 text-xs sm:text-sm uppercase font-semibold">Contact</p>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-poppins font-bold tracking-tight mb-4 ${
               isDark ? 'text-white' : 'text-gray-900'
             }`}>
-              Let's Work Together
+              Let's Connect
             </h2>
+            <div className={`w-20 h-1 mx-auto mb-6 rounded-full ${isDark ? 'bg-primary/50' : 'bg-primary/30'}`} />
             <p className={`max-w-lg mx-auto text-sm sm:text-base ${
-              isDark ? 'text-white/55' : 'text-gray-500'
+              isDark ? 'text-white/60' : 'text-gray-500'
             }`}>
-              Have a project in mind, a role to fill, or just want to connect? I'm always open to the right conversation.
+              Open to full-time roles, contract work, and technical discussions. Currently employed but exploring growth opportunities.
             </p>
           </div>
 
@@ -1144,36 +1283,41 @@ const Index = () => {
             {/* Left panel — 2 cols */}
             <div className="lg:col-span-2 flex flex-col gap-5">
 
-              {/* Availability card */}
-              <div className={`rounded-2xl border p-5 ${
-                isDark ? 'bg-green-500/8 border-green-500/20' : 'bg-green-50 border-green-200'
+              {/* Availability card - Enhanced */}
+              <div className={`rounded-2xl border p-6 ${
+                isDark 
+                  ? 'bg-gradient-to-br from-green-500/10 to-emerald-500/5 border-green-500/30 shadow-[0_0_30px_rgba(34,197,94,0.1)]' 
+                  : 'bg-gradient-to-br from-green-50 to-emerald-50 border-green-200 shadow-lg shadow-green-500/10'
               }`}>
-                <div className="flex items-center gap-2 mb-2">
-                  <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
-                  <span className={`text-xs font-semibold uppercase tracking-widest ${
+                <div className="flex items-center gap-2.5 mb-3">
+                  <span className="w-2.5 h-2.5 bg-green-500 rounded-full animate-pulse shadow-[0_0_10px_rgba(34,197,94,0.8)]" />
+                  <span className={`text-xs font-semibold uppercase tracking-[0.15em] ${
                     isDark ? 'text-green-400' : 'text-green-600'
-                  }`}>Available Now</span>
+                  }`}>Open to Opportunities</span>
                 </div>
-                <p className={`text-sm leading-relaxed ${isDark ? 'text-white/70' : 'text-gray-600'}`}>
-                  Open to <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>full-time roles</span>, <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>internships</span>, and <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-800'}`}>freelance projects</span>.
+                <p className={`text-sm leading-relaxed ${isDark ? 'text-white/80' : 'text-gray-700'}`}>
+                  Actively seeking <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>full-time software engineering roles</span> and <span className={`font-semibold ${isDark ? 'text-white' : 'text-gray-900'}`}>backend engineering positions</span>.
                 </p>
-                <p className={`text-xs mt-2 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>
-                  ⚡ Typically responds within 24 hours
+                <p className={`text-xs mt-3 flex items-center gap-1.5 ${isDark ? 'text-white/50' : 'text-gray-500'}`}>
+                  <MapPin className="w-3 h-3" />
+                  Andhra Pradesh, India · Remote OK
                 </p>
               </div>
 
-              {/* What I can help with */}
-              <div className={`rounded-2xl border p-5 ${
-                isDark ? 'bg-white/4 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              {/* What I can help with - Enhanced */}
+              <div className={`rounded-2xl border p-6 ${
+                isDark 
+                  ? 'bg-gradient-to-br from-white/8 to-white/4 border-white/15' 
+                  : 'bg-white border-gray-200 shadow-lg shadow-gray-200/50'
               }`}>
-                <p className={`text-xs uppercase tracking-widest font-semibold mb-3 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>I Can Help With</p>
+                <p className={`text-xs uppercase tracking-[0.15em] font-semibold mb-4 ${isDark ? 'text-white/60' : 'text-gray-500'}`}>Technical Expertise</p>
                 <div className="space-y-2">
                   {[
-                    "Full Stack Web Development",
-                    "REST API Design & Integration",
-                    "ML Model Integration",
-                    "Cloud Deployment (AWS/Docker)",
-                    "Code Review & Consultation",
+                    "Backend API Development (FastAPI/Django)",
+                    "Database Design & Optimization",
+                    "Cloud Infrastructure & DevOps",
+                    "AI/ML Integration in Web Applications",
+                    "Full-Stack System Architecture",
                   ].map((item) => (
                     <div key={item} className="flex items-center gap-2">
                       <span className="w-1.5 h-1.5 rounded-full bg-primary flex-shrink-0" />
@@ -1183,16 +1327,18 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Social links */}
-              <div className={`rounded-2xl border p-5 ${
-                isDark ? 'bg-white/4 border-white/10' : 'bg-white border-gray-200 shadow-sm'
+              {/* Social links - Enhanced */}
+              <div className={`rounded-2xl border p-6 ${
+                isDark 
+                  ? 'bg-gradient-to-br from-white/8 to-white/4 border-white/15' 
+                  : 'bg-white border-gray-200 shadow-lg shadow-gray-200/50'
               }`}>
-                <p className={`text-xs uppercase tracking-widest font-semibold mb-3 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>Find Me On</p>
+                <p className={`text-xs uppercase tracking-[0.15em] font-semibold mb-4 ${isDark ? 'text-white/60' : 'text-gray-500'}`}>Connect</p>
                 <div className="space-y-2.5">
                   {[
                     { icon: <Mail className="w-4 h-4" />, label: "grajesh2906@gmail.com", href: "mailto:grajesh2906@gmail.com", display: "Email" },
-                    { icon: <Linkedin className="w-4 h-4" />, label: "linkedin.com/in/rajesh2906", href: "https://www.linkedin.com/in/rajesh2906/", display: "LinkedIn" },
-                    { icon: <Github className="w-4 h-4" />, label: "github.com/RAJESH2961", href: "https://github.com/RAJESH2961", display: "GitHub" },
+                    { icon: <Linkedin className="w-4 h-4" />, label: "linkedin.com/in/Rajesh2906", href: "https://www.linkedin.com/in/Rajesh2906/", display: "LinkedIn" },
+                    { icon: <Github className="w-4 h-4" />, label: "github.com/Rajesh2961", href: "https://github.com/Rajesh2961", display: "GitHub" },
                   ].map((link) => (
                     <a
                       key={link.display}
@@ -1218,72 +1364,70 @@ const Index = () => {
             <form onSubmit={handleSubmit} className="lg:col-span-3">
               <div className={`relative h-full rounded-2xl overflow-hidden transition-all duration-300 ${
                 isDark
-                  ? 'border border-white/10 hover:border-primary/30'
-                  : 'border border-gray-200 shadow-md hover:shadow-xl hover:shadow-primary/8'
+                  ? 'border border-white/15 hover:border-primary/40 bg-gradient-to-br from-white/8 to-white/4'
+                  : 'border border-gray-200 shadow-xl shadow-gray-200/50 hover:shadow-2xl hover:shadow-primary/10 bg-white'
               }`}>
                 {/* Gradient top accent */}
-                <div className="h-1 w-full bg-gradient-to-r from-violet-500 via-primary to-cyan-500" />
+                <div className="h-1.5 w-full bg-gradient-to-r from-violet-500 via-primary to-cyan-500" />
 
-                <div className={`p-6 sm:p-8 space-y-5 ${
-                  isDark ? 'bg-white/4' : 'bg-white'
-                }`}>
+                <div className="p-6 sm:p-8 space-y-6">
                   {/* Form heading */}
-                  <div className="mb-1">
-                    <h3 className={`text-base font-bold ${isDark ? 'text-white' : 'text-gray-900'}`}>Drop me a message</h3>
-                    <p className={`text-xs mt-0.5 ${isDark ? 'text-white/40' : 'text-gray-400'}`}>I read every message and reply personally.</p>
+                  <div className="mb-2">
+                    <h3 className={`text-lg font-bold mb-1 ${isDark ? 'text-white' : 'text-gray-900'}`}>Send a Message</h3>
+                    <p className={`text-xs ${isDark ? 'text-white/50' : 'text-gray-500'}`}>Direct inquiries or collaboration proposals welcome.</p>
                   </div>
 
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-1.5">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                    <div className="space-y-2">
                       <label htmlFor="name" className={`block text-xs font-semibold uppercase tracking-wider ${
-                        isDark ? 'text-white/45' : 'text-gray-400'
-                      }`}>Your Name</label>
+                        isDark ? 'text-white/60' : 'text-gray-500'
+                      }`}>Name</label>
                       <Input
                         id="name"
-                        placeholder="John Doe"
+                        placeholder="Your name"
                         value={formData.name}
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
-                        className={`w-full rounded-xl text-sm h-11 transition-all duration-200 ${
+                        className={`w-full rounded-xl text-sm h-12 transition-all duration-200 ${
                           isDark
-                            ? 'bg-white/6 border-white/12 text-white placeholder:text-white/25 focus:border-primary/70 focus:bg-white/10 hover:border-white/20'
-                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-primary hover:border-gray-300'
+                            ? 'bg-white/8 border-white/15 text-white placeholder:text-white/30 focus:border-primary focus:bg-white/12 hover:border-white/25'
+                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-300'
                         }`}
                         required
                       />
                     </div>
-                    <div className="space-y-1.5">
+                    <div className="space-y-2">
                       <label htmlFor="email" className={`block text-xs font-semibold uppercase tracking-wider ${
-                        isDark ? 'text-white/45' : 'text-gray-400'
-                      }`}>Email Address</label>
+                        isDark ? 'text-white/60' : 'text-gray-500'
+                      }`}>Email</label>
                       <Input
                         id="email"
                         type="email"
-                        placeholder="you@company.com"
+                        placeholder="your@email.com"
                         value={formData.email}
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
-                        className={`w-full rounded-xl text-sm h-11 transition-all duration-200 ${
+                        className={`w-full rounded-xl text-sm h-12 transition-all duration-200 ${
                           isDark
-                            ? 'bg-white/6 border-white/12 text-white placeholder:text-white/25 focus:border-primary/70 focus:bg-white/10 hover:border-white/20'
-                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-primary hover:border-gray-300'
+                            ? 'bg-white/8 border-white/15 text-white placeholder:text-white/30 focus:border-primary focus:bg-white/12 hover:border-white/25'
+                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-300'
                         }`}
                         required
                       />
                     </div>
                   </div>
 
-                  <div className="space-y-1.5">
+                  <div className="space-y-2">
                     <label htmlFor="message" className={`block text-xs font-semibold uppercase tracking-wider ${
-                      isDark ? 'text-white/45' : 'text-gray-400'
+                      isDark ? 'text-white/60' : 'text-gray-500'
                     }`}>Message</label>
                     <Textarea
                       id="message"
-                      placeholder="Tell me about your project, role, or idea — the more detail, the better."
+                      placeholder="Describe your project requirements, role details, or any questions you have."
                       value={formData.message}
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
-                      className={`w-full min-h-[150px] resize-none rounded-xl text-sm transition-all duration-200 ${
+                      className={`w-full min-h-[140px] resize-none rounded-xl text-sm transition-all duration-200 ${
                         isDark
-                          ? 'bg-white/6 border-white/12 text-white placeholder:text-white/25 focus:border-primary/70 focus:bg-white/10 hover:border-white/20'
-                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-400 focus:bg-white focus:border-primary hover:border-gray-300'
+                          ? 'bg-white/8 border-white/15 text-white placeholder:text-white/30 focus:border-primary focus:bg-white/12 hover:border-white/25'
+                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-300'
                       }`}
                       required
                     />
@@ -1292,7 +1436,7 @@ const Index = () => {
                   <Button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full h-12 rounded-xl text-sm font-semibold group transition-all duration-300 hover:scale-[1.015] bg-gradient-to-r from-primary via-violet-500 to-primary bg-size-200 hover:bg-right shadow-lg shadow-primary/25 text-white border-0"
+                    className="w-full h-12 rounded-xl text-sm font-semibold group transition-all duration-300 hover:scale-[1.02] bg-gradient-to-r from-primary via-violet-500 to-violet-600 shadow-lg shadow-primary/25 text-white border-0 hover:shadow-xl hover:shadow-primary/40"
                   >
                     {isSubmitting ? (
                       <span className="flex items-center justify-center gap-2">
@@ -1326,7 +1470,7 @@ const Index = () => {
                       grajesh2906@gmail.com
                     </a>
                     <a
-                      href="https://www.linkedin.com/in/rajesh2906/"
+                      href="https://www.linkedin.com/in/Rajesh2906/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className={`flex-1 flex items-center justify-center gap-2 py-2.5 rounded-xl text-xs font-semibold border transition-all duration-200 hover:scale-[1.02] hover:border-primary/50 hover:text-primary ${
@@ -1344,52 +1488,56 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer with improved mobile layout */}
-      <footer className={`py-8 sm:py-12 px-4 sm:px-6 border-t relative z-10 ${
-        isDark ? 'border-white/10' : 'border-gray-300'
+      {/* Footer - Enhanced */}
+      <footer className={`py-12 sm:py-16 px-4 sm:px-6 border-t relative z-10 ${
+        isDark 
+          ? 'border-white/10 bg-gradient-to-b from-transparent to-black/50' 
+          : 'border-gray-200 bg-gradient-to-b from-transparent to-gray-50/50'
       }`}>
         <div className="container mx-auto max-w-6xl">
           <div className="text-center scroll-animate opacity-0 translate-y-8">
-            <div className="text-xl sm:text-2xl font-inter mb-4 hover:scale-110 transition-all duration-300 cursor-default">
-              <span className={isDark ? 'text-white' : 'text-gray-900'}>RG</span>
+            {/* Logo */}
+            <a 
+              href="#home"
+              onClick={(e) => { e.preventDefault(); scrollToSection('home'); }}
+              className="inline-block text-2xl sm:text-3xl font-bold font-poppins tracking-tight mb-6 group cursor-pointer"
+            >
+              <span className={`${isDark ? 'text-white' : 'text-gray-900'} group-hover:text-primary transition-colors duration-300`}>RG</span>
               <span className="text-primary">.</span>
-            </div>
-            <p className={`mb-4 sm:mb-6 text-sm sm:text-base ${isDark ? 'text-white/70' : 'text-gray-700'}`}>
-              Building the future through innovative web development solutions.
+            </a>
+            
+            {/* Tagline */}
+            <p className={`mb-8 text-sm sm:text-base max-w-md mx-auto ${isDark ? 'text-white/60' : 'text-gray-600'}`}>
+              Backend engineer building scalable systems and production-grade applications.
             </p>
-            <div className="flex justify-center space-x-3 sm:space-x-4 mb-6 sm:mb-8">
-              <a 
-                href="https://github.com/RAJESH2961" 
-                className={`w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
-                  isDark ? 'bg-white/10 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/20'
-                }`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                <Github size={18} className="sm:w-5 sm:h-5" />
-              </a>
-              <a 
-                href="https://linkedin.com/in/rajesh2906" 
-                className={`w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
-                  isDark ? 'bg-white/10 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/20'
-                }`} 
-                target="_blank" 
-                rel="noopener noreferrer"
-              >
-                
-                <Linkedin size={18} className="sm:w-5 sm:h-5" />
-              </a>
-              <a 
-                href="mailto:grajesh2906@gmail.com" target="_blank"
-                className={`w-10 sm:w-12 h-10 sm:h-12 rounded-full flex items-center justify-center transition-all duration-300 hover:scale-110 ${
-                  isDark ? 'bg-white/10 hover:bg-primary/20' : 'bg-gray-100 hover:bg-primary/20'
-                }`}
-              >
-                <Mail size={18} className="sm:w-5 sm:h-5" />
-              </a>
+            
+            {/* Social Links */}
+            <div className="flex justify-center gap-4 mb-8">
+              {[
+                { icon: Github, href: "https://github.com/Rajesh2961", label: "GitHub" },
+                { icon: Linkedin, href: "https://linkedin.com/in/Rajesh2906", label: "LinkedIn" },
+                { icon: Mail, href: "mailto:grajesh2906@gmail.com", label: "Email" },
+              ].map((social) => (
+                <a
+                  key={social.label}
+                  href={social.href}
+                  target={social.label === "Email" ? undefined : "_blank"}
+                  rel={social.label === "Email" ? undefined : "noopener noreferrer"}
+                  className={`group flex items-center justify-center w-12 h-12 rounded-xl transition-all duration-300 hover:scale-110 ${
+                    isDark
+                      ? 'bg-white/10 border border-white/20 text-white/70 hover:bg-primary/20 hover:border-primary/50 hover:text-primary'
+                      : 'bg-white border border-gray-200 text-gray-600 shadow-sm hover:border-primary/50 hover:text-primary hover:shadow-md'
+                  }`}
+                  title={social.label}
+                >
+                  <social.icon className="w-5 h-5" />
+                </a>
+              ))}
             </div>
-            <p className={`text-xs sm:text-sm ${isDark ? 'text-white/50' : 'text-gray-500'}`}>
-             Build with by ❤️  Rajesh Gangadharam
+            
+            {/* Copyright */}
+            <p className={`text-xs sm:text-sm font-medium ${isDark ? 'text-white/40' : 'text-gray-500'}`}>
+             Built with ❤️ by Rajesh Gangadharam
             </p>
           </div>
         </div>

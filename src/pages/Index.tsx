@@ -341,16 +341,7 @@ const Index = () => {
             
             <div className="flex items-center space-x-3 sm:space-x-4">
               <ThemeToggle />
-              <Button 
-                className={`hidden md:flex px-5 py-2.5 rounded-full text-sm font-semibold transition-all  hover:scale-105 ${
-                  isDark
-                    ? 'bg-gradient-to-r from-primaryshadow-[0_0_20px_rgba(139,92,246,0.3)] hover:shadow-[0_0_30px_rgba(139,92,246,0.5)]'
-                    : 'bg-gradient-to-r from-primary shadow-lg shadow-primary/20'
-                }`}
-                onClick={() => scrollToSection('contact')}
-              >
-                Hire Me
-              </Button>
+
               
               {/* Mobile menu button */}
               <button 
@@ -675,7 +666,7 @@ const Index = () => {
                 </div>
               </div>
 
-              {/* Unique differentiators */}
+              {/* Unique differentiators - Why Hire Me */}
               <div>
                 <p className={`text-xs uppercase tracking-[0.2em] font-semibold mb-5 ${isDark ? 'text-white/50' : 'text-gray-500'}`}>Why Hire Me</p>
                 <div className="space-y-3">
@@ -1389,8 +1380,8 @@ const Index = () => {
                         onChange={(e) => setFormData({...formData, name: e.target.value})}
                         className={`w-full rounded-xl text-sm h-12 transition-all duration-200 ${
                           isDark
-                            ? 'bg-white/8 border-white/15 text-white placeholder:text-white/30 focus:border-primary focus:bg-white/12 hover:border-white/25'
-                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-300'
+                            ? 'bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/15 hover:border-white/30'
+                            : 'bg-gray-100 border-gray-300 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-400'
                         }`}
                         required
                       />
@@ -1407,8 +1398,8 @@ const Index = () => {
                         onChange={(e) => setFormData({...formData, email: e.target.value})}
                         className={`w-full rounded-xl text-sm h-12 transition-all duration-200 ${
                           isDark
-                            ? 'bg-white/8 border-white/15 text-white placeholder:text-white/30 focus:border-primary focus:bg-white/12 hover:border-white/25'
-                            : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-300'
+                            ? 'bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/15 hover:border-white/30'
+                            : 'bg-gray-100 border-gray-300 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-400'
                         }`}
                         required
                       />
@@ -1426,8 +1417,8 @@ const Index = () => {
                       onChange={(e) => setFormData({...formData, message: e.target.value})}
                       className={`w-full min-h-[140px] resize-none rounded-xl text-sm transition-all duration-200 ${
                         isDark
-                          ? 'bg-white/8 border-white/15 text-white placeholder:text-white/30 focus:border-primary focus:bg-white/12 hover:border-white/25'
-                          : 'bg-gray-50 border-gray-200 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-300'
+                          ? 'bg-white/10 border-white/20 text-white placeholder:text-white/40 focus:border-primary focus:bg-white/15 hover:border-white/30'
+                          : 'bg-gray-100 border-gray-300 text-gray-900 placeholder:text-gray-500 focus:bg-white focus:border-primary focus:ring-2 focus:ring-primary/20 hover:border-gray-400'
                       }`}
                       required
                     />
